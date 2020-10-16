@@ -14,6 +14,8 @@ from SlamHandler import SlamHandler
 from threading import RLock
 
 import traceback
+import mavros_msgs.srv
+import geographic_msgs.msg
 
 ############################################ Controler ##########################################################
 
@@ -65,15 +67,15 @@ class Controler:
 
         
         ###connecting to ROS master
-        print("Starting python Agent node on ROS.")
-        try:
-            rospy.init_node('python_agent', log_level=rospy.INFO)
-            signal.signal(signal.SIGINT, signal.SIG_DFL)
-        except:
-            traceback.print_exc()
+        # print("Starting python Agent node on ROS.")
+        # try:
+        #     rospy.init_node('python_agent', log_level=rospy.INFO)
+        #     signal.signal(signal.SIGINT, signal.SIG_DFL)
+        # except:
+        #     traceback.print_exc()
 
-        ##start actions and perceptions
-        self.actions.set_mode()
+        # ##start actions and perceptions
+        # self.actions.set_mode()
 
 
 
@@ -203,6 +205,10 @@ class Controler:
             if((50 - elapsed_time) > 0):                                                        # sampling at 50ms
                 time.sleep((50 - elapsed_time) / 1000) ##convert to seconds for sleep function  #
                             
+    def pos_call_back(self, msg):
+        self.dest_lat = msg[0]
+        self.dest_lng = msg[1]
+    
     def getTrajectory(self):
         ##for testing reasons we will calculate an interpolated number of points on an straight line to the destination
         pos = self.perceptions.getPos()
@@ -242,7 +248,9 @@ def matchPositions(pos1, pos2, tol):
     return res
 
 
-############################################ main ##########################################################
+############################################ main #######################################################
+
+import sensor_msgs.msg
 
 def main():
     #new code for initialization
@@ -250,12 +258,59 @@ def main():
     controler = Controler()
 
 
+    ###comandos concentrados para iniciar o ros e os topicos necessários
+    print("Starting python Agent node on ROS.")
+        try:
+            rospy.init_node('python_agent', log_level=rospy.INFO)
+            signal.signal(signal.SIGINT, signal.SIG_DFL)
+            
+            set_mode = rospy.ServiceProxy('mavros/set_mode', mavros_msgs.srv.SetMode)
+            rospy.wait_for_service('mavros/set_mode')
+            set_mode(mavros_msgs.srv.SetMode, "GUIDED")
+
+            arm_motors = rospy.ServiceProxy('mavros/cmd/arming', mavros_msgs.srv.CommandBool)
+            rospy.wait_for_service('mavros/cmd/arming')
+            arm_motors(mavros_msgs.srv.CommandBool, True)
+
+            take_off = rospy.ServiceProxy('mavros/cmd/takeoff', mavros_msgs.srv.CommandTol)
+            rospy.wait_for_service('mavros/cmd/takeoff')
+            take_off(mavros_msgs.srv.CommandTol, 5.0)  ##altitude float for taking off
+
+            pos_sub = rospy.Subscriber('mavros/global_position/global', sensor_msgs.msg.NavSatFix, callback=controler.pos_call_back)
+            
+            setPoint_pub = rospy.Publisher('mavros/setpoint_position/global', geographic_msgs.msg._GeoPoseStamped, latch=True)
+            setPoint_pub.publish(-27.603683, -48.518052, 40)
+
+            rate = rospy.Rate(10)
+
+            while(not matchPositions((-27.603683, -48.518052, 0),(controler.dest_lat, controler.dest_lng, 0), 0.01)):
+                rate.sleep()
+
+            land = rospy.ServiceProxy('mavros/cmd/land', mavros_msgs.srv.CommandTOL)
+            rospy.wait_for_service('mavros/cmd/land')
+            land()
+
+
+
+        except:
+            traceback.print_exc()
+
+        
+# [global_pos]
+# name = mavros/global_position/global
+# msg_type = NavSatFix
+# dependencies = sensor_msgs.msg
+# args = latitude, longitude
+# buf = update[global_pos]
+
+
+
     ##start process
-    controler.controlState()
+    ###controler.controlState()
 
     ##when exiting
-    print("exiting server")
-    controler.comFMC.terminate = True
+    #print("exiting server")
+    #controler.comFMC.terminate = True
 
     ##old code for initialization
     # print("Starting python Agent node.")
