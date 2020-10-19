@@ -290,6 +290,8 @@ def main():
         rospy.wait_for_service('mavros/cmd/land')
         land()
 
+        print("project finished")
+
 
 
     except:
