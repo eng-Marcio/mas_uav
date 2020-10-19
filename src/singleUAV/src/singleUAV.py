@@ -292,7 +292,7 @@ def main():
         rospy.wait_for_service('mavros/cmd/land')
         land()
 
-        print("project finished")
+        print("project changed")
 
 # def setpoint_global(self, **kw):
 #         setpoint_global_pub = rospy.Publisher(
