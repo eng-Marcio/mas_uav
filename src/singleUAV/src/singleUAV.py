@@ -264,22 +264,24 @@ def main():
         rospy.init_node('python_agent', log_level=rospy.INFO)
         signal.signal(signal.SIGINT, signal.SIG_DFL)
             
-        set_mode = rospy.ServiceProxy('mavros/set_mode', mavros_msgs.srv.SetMode)
         rospy.wait_for_service('mavros/set_mode')
+        set_mode = rospy.ServiceProxy('mavros/set_mode', mavros_msgs.srv.SetMode)
         set_mode(custom_mode='GUIDED')
 
-        arm_motors = rospy.ServiceProxy('mavros/cmd/arming', mavros_msgs.srv.CommandBool)
         rospy.wait_for_service('mavros/cmd/arming')
-        arm_motors(mavros_msgs.srv.CommandBool, True)
+        arm_motors = rospy.ServiceProxy('mavros/cmd/arming', mavros_msgs.srv.CommandBool)
+        armed = arm_motors(True)
 
-        take_off = rospy.ServiceProxy('mavros/cmd/takeoff', mavros_msgs.srv.CommandTol)
         rospy.wait_for_service('mavros/cmd/takeoff')
-        take_off(mavros_msgs.srv.CommandTol, 5.0)  ##altitude float for taking off
+        take_off = rospy.ServiceProxy('mavros/cmd/takeoff', mavros_msgs.srv.CommandTol)
+        take_off(5.0)  ##altitude float for taking off
 
         pos_sub = rospy.Subscriber('mavros/global_position/global', sensor_msgs.msg.NavSatFix, callback=controler.pos_call_back)
             
-        setPoint_pub = rospy.Publisher('mavros/setpoint_position/global', geographic_msgs.msg._GeoPoseStamped, latch=True)
-        setPoint_pub.publish(-27.603683, -48.518052, 40)
+        setPoint_pub = rospy.Publisher('mavros/setpoint_position/global', geographic_msgs.msg.GlobalPositionTarget, queue_size=1, latch=True)
+        header = std_msgs.msg.Header()
+        header.stamp = rospy.Time.now()
+        setPoint_pub.publish(-27.603683, -48.518052, 40, header=header)
 
         rate = rospy.Rate(10)
 
@@ -292,9 +294,22 @@ def main():
 
         print("project finished")
 
+# def setpoint_global(self, **kw):
+#         setpoint_global_pub = rospy.Publisher(
+#             '/mavros/setpoint_position/global',
+#             mavros_msgs.msg.GlobalPositionTarget,
+#             queue_size=1,
+#             latch=True)
+
+#         header = std_msgs.msg.Header()
+#         header.stamp = rospy.Time.now()
+#         kw['header'] = header
+
+#         setpoint_global_pub.publish(**kw)
 
 
     except:
+        print("Service failed")
         traceback.print_exc()
 
         
