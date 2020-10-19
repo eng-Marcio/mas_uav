@@ -237,9 +237,6 @@ class Controler:
         self.trajectoryState = self.T_Active
 
 
-
-
-
 def matchPositions(pos1, pos2, tol):
     res = True
     res = res and (abs(pos1[0] - pos2[0]) < tol)
@@ -258,7 +255,7 @@ def main():
     controler = Controler()
 
 
-    ###comandos concentrados para iniciar o ros e os topicos necessários
+    ###comandos concentrados para iniciar o ros e os topicos necessarios
     print("Starting python Agent node on ROS.")
     try:
         rospy.init_node('python_agent', log_level=rospy.INFO)
@@ -293,20 +290,6 @@ def main():
         land()
 
         print("project changed")
-
-# def setpoint_global(self, **kw):
-#         setpoint_global_pub = rospy.Publisher(
-#             '/mavros/setpoint_position/global',
-#             mavros_msgs.msg.GlobalPositionTarget,
-#             queue_size=1,
-#             latch=True)
-
-#         header = std_msgs.msg.Header()
-#         header.stamp = rospy.Time.now()
-#         kw['header'] = header
-
-#         setpoint_global_pub.publish(**kw)
-
 
     except:
         print("Service failed")
