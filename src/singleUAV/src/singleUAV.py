@@ -266,13 +266,13 @@ def main():
         rospy.init_node('python_agent', log_level=rospy.INFO)
         signal.signal(signal.SIGINT, signal.SIG_DFL)
             
-        rate = rospy.Rate(2)
+        state_sub = rospy.Subscriber('/mavros/state', mavros_msgs.msg.State, controler.state_callback)
+        rate = rospy.Rate(10)
         
         rospy.wait_for_service('mavros/set_mode')
         set_mode = rospy.ServiceProxy('mavros/set_mode', mavros_msgs.srv.SetMode)
         set_mode(custom_mode='GUIDED')
 
-        state_sub = rospy.Subscriber('/mavros/state', mavros_msgs.msg.State, controler.state_callback)
 
         rospy.wait_for_service('mavros/cmd/arming')
         arm_motors = rospy.ServiceProxy('mavros/cmd/arming', mavros_msgs.srv.CommandBool)
