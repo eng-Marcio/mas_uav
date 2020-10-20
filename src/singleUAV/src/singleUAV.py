@@ -63,28 +63,27 @@ class Controler:
         self.trajectoryState = self.T_None
         self.trajectory = [[0, 0, 0]]   ##trajectory will always be a finite 3d array of points
         self.trajPointer = -1   ##pointer which shows the current destination in the array above that drone is following
-        ##some important attributes
-        self.dest_lat = 10
-        self.dest_lng = 10
-        self.dest_alt = 10
-
         
-        ###connecting to ROS master
-        self.state = mavros_msgs.msg.State()
-        self.position = geometry_msgs.msg.Point()
-        # print("Starting python Agent node on ROS.")
-        # try:
-        #     rospy.init_node('python_agent', log_level=rospy.INFO)
-        #     signal.signal(signal.SIGINT, signal.SIG_DFL)
-        # except:
-        #     traceback.print_exc()
-
-        # ##start actions and perceptions
-        # self.actions.set_mode()
-
-
-
+        
     #methods
+    def start(self):
+        # init ROS master and python node
+        print("Starting python Agent node on ROS.")
+        try:
+            rospy.init_node('python_agent', log_level=rospy.INFO)
+            signal.signal(signal.SIGINT, signal.SIG_DFL)
+        except:
+            traceback.print_exc()
+
+        # ros sleeps used in the system
+        self.setupRate = rospy.Rate(0.2) ##on setup, it rests for 5 secs
+        self.operRate = rospy.Rate(5)  ##on operation 200ms
+        self.smRate = rospy.Rate(20) ##during statemachine checks, wait 50 ms
+
+        ##start ros instances on peripheral objects
+        self.perceptions.start()
+        self.actions.start()
+
     def isAValidStateChange(self, state):
         if(state == self.S_Awaiting):
             if(self.currentState != self.S_Landing):
@@ -210,12 +209,6 @@ class Controler:
             if((50 - elapsed_time) > 0):                                                        # sampling at 50ms
                 time.sleep((50 - elapsed_time) / 1000) ##convert to seconds for sleep function  #
                             
-    def pos_call_back(self, msg):
-        self.position = msg.pose.pose.position
-        
-    def state_callback(self, msg):
-        self.state = msg
-
     def getTrajectory(self):
         ##for testing reasons we will calculate an interpolated number of points on an straight line to the destination
         pos = self.perceptions.getPos()
@@ -260,101 +253,38 @@ def main():
     #new code for initialization
     print("Starting python node.")
     controler = Controler()
-    #teste1
+    
+    #start ros
+    controler.start()
 
     ###comandos concentrados para iniciar o ros e os topicos necessarios
-    print("Starting python Agent node on ROS.")
-    try:
-        rospy.init_node('python_agent', log_level=rospy.INFO)
-        signal.signal(signal.SIGINT, signal.SIG_DFL)
-            
-        state_sub = rospy.Subscriber('/mavros/state', mavros_msgs.msg.State, controler.state_callback)
-        pos_sub = rospy.Subscriber('mavros/global_position/local', nav_msgs.msg.Odometry, controler.pos_call_back)
+    while(not controler.perceptions.getState().guided):
+        controler.actions.setMode('GUIDED')
+        controler.setupRate.sleep()
+    
+    while(not controler.perceptions.getState().armed):
+        controler.actions.ArmMotors(True)
+        controler.setupRate.sleep()
 
-        rate = rospy.Rate(5)
-        
-        rospy.wait_for_service('mavros/set_mode')
-        set_mode = rospy.ServiceProxy('mavros/set_mode', mavros_msgs.srv.SetMode)
-        set_mode(custom_mode='GUIDED')
-        while(not controler.state.guided):
-            rate.sleep()
+    to_alt = 7
+    controler.actions.TakeOff(to_alt)
+    while(not matchPositions((0, 0, to_alt),(0, 0, controler.perceptions.getPos()[2]), 0.5)):
+        controler.operRate.sleep()
 
-        rospy.wait_for_service('mavros/cmd/arming')
-        arm_motors = rospy.ServiceProxy('mavros/cmd/arming', mavros_msgs.srv.CommandBool)
-        
-        while(not controler.state.armed):
-            arm_motors(True)
-            rate.sleep()
+    controler.actions.SetPoint((25,30,5))
+    while(not matchPositions((25,30,5),controler.perceptions.getPos(), 1.0)):
+        controler.operRate.sleep()
 
-        rospy.wait_for_service('mavros/cmd/takeoff')
-        take_off = rospy.ServiceProxy('mavros/cmd/takeoff', mavros_msgs.srv.CommandTOL)
-        take_off(altitude=7.0)  
-        
-        while(not matchPositions((0, 0, 7),(0, 0, controler.position.z), 0.5)):
-            rate.sleep()
-         
-        setPoint_pub = rospy.Publisher('mavros/setpoint_position/local', geometry_msgs.msg.PoseStamped, queue_size=1, latch=True)
-        header = std_msgs.msg.Header()
-        header.stamp = rospy.Time.now()
-        pos = geometry_msgs.msg.Point(0, 50, 10)
-        pose = geometry_msgs.msg.Pose(position=pos)
-        setPoint_pub.publish(pose=pose, header=header)
-
-        while(not matchPositions((0,50,10),(controler.position.x, controler.position.y, controler.position.z), 1.0)):
-            rate.sleep()
-
-        ##send new position
-        header = std_msgs.msg.Header()
-        header.stamp = rospy.Time.now()
-        pos = geometry_msgs.msg.Point(0, 0, 3)
-        pose = geometry_msgs.msg.Pose(position=pos)
-        setPoint_pub.publish(pose=pose, header=header)
-
-        while(not matchPositions((0,0,3),(controler.position.x, controler.position.y, controler.position.z), 0.5)):
-            rate.sleep()
-
-        land = rospy.ServiceProxy('mavros/cmd/land', mavros_msgs.srv.CommandTOL)
-        rospy.wait_for_service('mavros/cmd/land')
-        land()
-
-        print("project changed")
-
-    except:
-        print("Service failed")
-        traceback.print_exc()
-
-        
-# [global_pos]
-# name = mavros/global_position/global
-# msg_type = NavSatFix
-# dependencies = sensor_msgs.msg
-# args = latitude, longitude
-# buf = update[global_pos]
+    controler.actions.SetPoint((0,0,3))
+    while(not matchPositions((0,0,3),controler.perceptions.getPos(), 1.0)):
+        controler.operRate.sleep()
 
 
-
-    ##start process
-    ###controler.controlState()
-
-    ##when exiting
-    #print("exiting server")
-    #controler.comFMC.terminate = True
-
-    ##old code for initialization
-    # print("Starting python Agent node.")
-    # rospy.init_node('python_agent', log_level=rospy.INFO)
-    # signal.signal(signal.SIGINT, signal.SIG_DFL)
-
-    # my_name = 'uav'
-    # agArch = AgArch(my_name)
-
-    # waitOnline(agArch)
-    # setModeGuided(agArch)
-    # armMotor(agArch)
-
-    # takeOff(agArch, 5)
-    # goToPos(agArch, -27.603683, -48.518052, 40)
-    # rtl(agArch)
-
+    controler.actions.Land()
+    while(controler.perceptions.getState().armed):
+        controler.operRate.sleep()
+    
+    return
+    
 if __name__ == '__main__':
     main()
