@@ -70,6 +70,7 @@ class Controler:
         ###connecting to ROS master
         self.state = mavros_msgs.msg.State()
         self.global_pos = sensor_msgs.msg.NavSatFix()
+        self.cur_alt = 0
         # print("Starting python Agent node on ROS.")
         # try:
         #     rospy.init_node('python_agent', log_level=rospy.INFO)
@@ -214,6 +215,9 @@ class Controler:
     def state_callback(self, msg):
         self.state = msg
     
+    def alt_call_back(self, msg):
+        self.cur_alt = msg
+
     def getTrajectory(self):
         ##for testing reasons we will calculate an interpolated number of points on an straight line to the destination
         pos = self.perceptions.getPos()
@@ -267,8 +271,9 @@ def main():
         signal.signal(signal.SIGINT, signal.SIG_DFL)
             
         state_sub = rospy.Subscriber('/mavros/state', mavros_msgs.msg.State, controler.state_callback)
-        pos_sub = rospy.Subscriber('mavros/global_position/global', sensor_msgs.msg.NavSatFix, callback=controler.pos_call_back)
-        
+        pos_sub = rospy.Subscriber('mavros/global_position/global', sensor_msgs.msg.NavSatFix, controler.pos_call_back)
+        alt_sub = rospy.Subscriber('global_position/rel_alt', std_msgs.msg.Float64, controler.alt_call_back)
+
         rate = rospy.Rate(2)
         
         rospy.wait_for_service('mavros/set_mode')
@@ -285,11 +290,13 @@ def main():
 
         rospy.wait_for_service('mavros/cmd/takeoff')
         take_off = rospy.ServiceProxy('mavros/cmd/takeoff', mavros_msgs.srv.CommandTOL)
-        take_off(altitude=5.0)  
+        take_off(altitude=7.0)  
 
-        
-        while(not matchPositions((0, 0, 5),(0, 0, controler.global_pos.altitude), 0.1)):
-            rate.sleep()
+        rate = rospy.Rate(0.2)
+        rate.sleep()
+        #while(not matchPositions((0, 0, 30),(0, 0, controler.cur_alt), 5)):
+        #    print("waiting")
+        #    rate.sleep()
          
         setPoint_pub = rospy.Publisher('mavros/setpoint_position/global', geographic_msgs.msg.GeoPoseStamped, queue_size=1, latch=True)
         header = std_msgs.msg.Header()
