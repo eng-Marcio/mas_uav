@@ -267,30 +267,30 @@ def main():
         signal.signal(signal.SIGINT, signal.SIG_DFL)
             
         state_sub = rospy.Subscriber('/mavros/state', mavros_msgs.msg.State, controler.state_callback)
-        rate = rospy.Rate(10)
+        pos_sub = rospy.Subscriber('mavros/global_position/global', sensor_msgs.msg.NavSatFix, callback=controler.pos_call_back)
+        
+        rate = rospy.Rate(2)
         
         rospy.wait_for_service('mavros/set_mode')
         set_mode = rospy.ServiceProxy('mavros/set_mode', mavros_msgs.srv.SetMode)
         set_mode(custom_mode='GUIDED')
-
+        while(not controler.state.guided):
+            rate.sleep()
 
         rospy.wait_for_service('mavros/cmd/arming')
         arm_motors = rospy.ServiceProxy('mavros/cmd/arming', mavros_msgs.srv.CommandBool)
         while(not controler.state.armed):
-            try:
-                arm_motors(True)
-            except:
-                rate.sleep()
+            arm_motors(True)
+            rate.sleep()
 
-        print("got armed###############################################################################")
         rospy.wait_for_service('mavros/cmd/takeoff')
         take_off = rospy.ServiceProxy('mavros/cmd/takeoff', mavros_msgs.srv.CommandTOL)
         take_off(altitude=5.0)  
 
-        rospy.spin()
-        pos_sub = rospy.Subscriber('mavros/global_position/global', sensor_msgs.msg.NavSatFix, callback=controler.pos_call_back)
         
-            
+        while(not matchPositions((0, 0, 5),(0, 0, controler.global_pos.altitude), 0.1)):
+            rate.sleep()
+         
         setPoint_pub = rospy.Publisher('mavros/setpoint_position/global', geographic_msgs.msg.GeoPoseStamped, queue_size=1, latch=True)
         header = std_msgs.msg.Header()
         header.stamp = rospy.Time.now()
@@ -298,7 +298,7 @@ def main():
         pose = geographic_msgs.msg.GeoPose(position=pos)
         setPoint_pub.publish(pose=pose, header=header)
 
-        while(not matchPositions((-27.603683, -48.518052, 0),(controler.global_pos.latitude, controler.global_pos.longitude, 0), 0.01)):
+        while(not matchPositions((-27.603683, -48.518052, 0),(controler.global_pos.latitude, controler.global_pos.longitude, controler.global_pos.altitude), 0.01)):
             rate.sleep()
 
         land = rospy.ServiceProxy('mavros/cmd/land', mavros_msgs.srv.CommandTOL)
