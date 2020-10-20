@@ -16,6 +16,7 @@ from threading import RLock
 import traceback
 import mavros_msgs.srv
 import geographic_msgs.msg
+import std_msgs.msg
 
 ############################################ Controler ##########################################################
 
@@ -270,16 +271,17 @@ def main():
         armed = arm_motors(True)
 
         rospy.wait_for_service('mavros/cmd/takeoff')
-        take_off = rospy.ServiceProxy('mavros/cmd/takeoff', mavros_msgs.srv.CommandTol)
-        take_off(5.0)  ##altitude float for taking off
+        take_off = rospy.ServiceProxy('mavros/cmd/takeoff', mavros_msgs.srv.CommandTOL)
+        take_off(altitude=10.0)  ##altitude float for taking off
 
-        pos_sub = rospy.Subscriber('mavros/global_position/global', sensor_msgs.msg.NavSatFix, callback=controler.pos_call_back)
+        #pos_sub = rospy.Subscriber('mavros/global_position/global', sensor_msgs.msg.NavSatFix, callback=controler.pos_call_back)
             
-        setPoint_pub = rospy.Publisher('mavros/setpoint_position/global', geographic_msgs.msg.GlobalPositionTarget, queue_size=1, latch=True)
+        setPoint_pub = rospy.Publisher('mavros/setpoint_position/global', geographic_msgs.msg.GeoPointStamped, queue_size=1, latch=True)
         header = std_msgs.msg.Header()
         header.stamp = rospy.Time.now()
-        setPoint_pub.publish(-27.603683, -48.518052, 40, header=header)
+        setPoint_pub.publish(latitude=-27.603683, longitude=-48.518052, altitude=40, header=header)
 
+        rospy.spin()
         rate = rospy.Rate(10)
 
         while(not matchPositions((-27.603683, -48.518052, 0),(controler.dest_lat, controler.dest_lng, 0), 0.01)):
