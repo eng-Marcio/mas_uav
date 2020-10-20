@@ -68,6 +68,8 @@ class Controler:
 
         
         ###connecting to ROS master
+        self.state = mavros_msgs.msg.State()
+        self.global_pos = sensor_msgs.msg.NavSatFix()
         # print("Starting python Agent node on ROS.")
         # try:
         #     rospy.init_node('python_agent', log_level=rospy.INFO)
@@ -207,8 +209,10 @@ class Controler:
                 time.sleep((50 - elapsed_time) / 1000) ##convert to seconds for sleep function  #
                             
     def pos_call_back(self, msg):
-        self.dest_lat = msg[0]
-        self.dest_lng = msg[1]
+        self.global_pos = msg
+
+    def state_callback(self, msg):
+        self.state = msg
     
     def getTrajectory(self):
         ##for testing reasons we will calculate an interpolated number of points on an straight line to the destination
@@ -262,29 +266,39 @@ def main():
         rospy.init_node('python_agent', log_level=rospy.INFO)
         signal.signal(signal.SIGINT, signal.SIG_DFL)
             
+        rate = rospy.Rate(2)
+        
         rospy.wait_for_service('mavros/set_mode')
         set_mode = rospy.ServiceProxy('mavros/set_mode', mavros_msgs.srv.SetMode)
         set_mode(custom_mode='GUIDED')
 
+        state_sub = rospy.Subscriber('/mavros/state', mavros_msgs.msg.State, controler.state_callback)
+
         rospy.wait_for_service('mavros/cmd/arming')
         arm_motors = rospy.ServiceProxy('mavros/cmd/arming', mavros_msgs.srv.CommandBool)
-        armed = arm_motors(True)
+        while(not controler.state.armed):
+            try:
+                arm_motors(True)
+            except:
+                rate.sleep()
 
+        print("got armed###############################################################################")
         rospy.wait_for_service('mavros/cmd/takeoff')
         take_off = rospy.ServiceProxy('mavros/cmd/takeoff', mavros_msgs.srv.CommandTOL)
-        take_off(altitude=10.0)  ##altitude float for taking off
-
-        #pos_sub = rospy.Subscriber('mavros/global_position/global', sensor_msgs.msg.NavSatFix, callback=controler.pos_call_back)
-            
-        setPoint_pub = rospy.Publisher('mavros/setpoint_position/global', geographic_msgs.msg.GeoPointStamped, queue_size=1, latch=True)
-        header = std_msgs.msg.Header()
-        header.stamp = rospy.Time.now()
-        setPoint_pub.publish(latitude=-27.603683, longitude=-48.518052, altitude=40, header=header)
+        take_off(altitude=5.0)  
 
         rospy.spin()
-        rate = rospy.Rate(10)
+        pos_sub = rospy.Subscriber('mavros/global_position/global', sensor_msgs.msg.NavSatFix, callback=controler.pos_call_back)
+        
+            
+        setPoint_pub = rospy.Publisher('mavros/setpoint_position/global', geographic_msgs.msg.GeoPoseStamped, queue_size=1, latch=True)
+        header = std_msgs.msg.Header()
+        header.stamp = rospy.Time.now()
+        pos = geographic_msgs.msg.GeoPoint(-27.603683, -48.518052, 40)
+        pose = geographic_msgs.msg.GeoPose(position=pos)
+        setPoint_pub.publish(pose=pose, header=header)
 
-        while(not matchPositions((-27.603683, -48.518052, 0),(controler.dest_lat, controler.dest_lng, 0), 0.01)):
+        while(not matchPositions((-27.603683, -48.518052, 0),(controler.global_pos.latitude, controler.global_pos.longitude, 0), 0.01)):
             rate.sleep()
 
         land = rospy.ServiceProxy('mavros/cmd/land', mavros_msgs.srv.CommandTOL)
