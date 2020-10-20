@@ -254,7 +254,7 @@ def main():
     #new code for initialization
     print("Starting python node.")
     controler = Controler()
-
+    #teste1
 
     ###comandos concentrados para iniciar o ros e os topicos necessarios
     print("Starting python Agent node on ROS.")
