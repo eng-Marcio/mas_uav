@@ -52,7 +52,8 @@ class Controler:
         self.comFMC = Com_FMC(self)          ##communication with the Fire Monitoring Center, represented by a human user in this system 
         self.slamHandler = SlamHandler(self) ##Map handler, slam-sensor topic listener, colision detection
         
-        ##setup of the system communication
+        ##some important constants
+        self.TAKEOFF_ALT_DEF = 7 ##default altitude to take off
         
 
         ##start state machine
@@ -141,18 +142,18 @@ class Controler:
                         
             elif(self.currentState == self.S_takeOff):
                 if(self.stateChanged):
-                    self.actions.takeOff()
+                    self.setupOperation()
                     self.stateChanged = False
                 pos = self.perceptions.getPos()
-                if(matchPositions(pos, (pos[0], pos[1], 5), 0.1)):   ##only check altitude, it should be bigger than 5
+                if(matchPositions((0, 0, self.TAKEOFF_ALT_DEF),(0, 0, self.perceptions.getPos()[2]), 0.5)): 
                     self.setState(self.S_HoldPos)
 
             elif(self.currentState == self.S_HoldPos):  ##execute only once, then change the state
                 if(self.stateChanged):
                     pos = self.perceptions.getPos()
-                    self.actions.setPoint(pos[0], pos[1], pos[2]) 
+                    self.actions.SetPoint(pos) 
                     self.stateChanged = False
-                if(matchPositions(pos, (self.dest_lat, self.dest_lng, self.dest_alt), 0.01)):
+                if(matchPositions(pos, (self.actions.des.x, self.actions.des.y, self.actions.des.z), 0.5)):
                     self.setState(self.S_InformFMC)
                 else:
                     self.setState(self.S_RunTrajAlgo)
@@ -171,19 +172,19 @@ class Controler:
                 if(self.stateChanged):                    ##no setup needed
                     self.stateChanged = False
                 cur_pos = self.perceptions.getPos()
-                if((self.trajectoryState == self.T_None) or matchPositions(cur_pos, (self.dest_lat, self.dest_lng, self.dest_alt), 0.001)): ##slam found an obstacle or destination reached
+                if((self.trajectoryState == self.T_None) or matchPositions(cur_pos, (self.actions.des.x, self.actions.des.y, self.actions.des.z), 0.5)): ##slam found an obstacle or destination reached
                     self.setState(self.S_HoldPos)
                 else:
                     if(self.trajPointer == -1):
                         self.trajPointer = self.trajPointer + 1
-                        self.actions.setPoint(self.trajectory[0][0], self.trajectory[0][1], self.trajectory[0][2])
+                        self.actions.SetPoint((self.trajectory[0][0], self.trajectory[0][1], self.trajectory[0][2]))
                     des = self.trajectory[self.trajPointer]         ##get current destination on trajectory plan
-                    if(matchPositions(cur_pos, (des[0], des[1], des[2]), 0.15)):
+                    if(matchPositions(cur_pos, des, 0.25)):
                         if(self.trajPointer != (len(self.trajectory) - 1)):                      ## set setpoint to next coordinate on trajectory plan
                             self.trajPointer = self.trajPointer + 1
                             self.actions.setPoint(self.trajectory[self.trajPointer][0], self.trajectory[self.trajPointer][1], self.trajectory[self.trajPointer][2])
 
-            elif(self.currentState == self.S_TrackSmoke):                  ##this is a ghost state for now
+            elif(self.currentState == self.S_TrackSmoke):     ##this is a ghost state for now
                 if(self.stateChanged):                    ##no setup needed
                     self.stateChanged = False
                 self.setState(self.S_InformAndWaitFMC)
@@ -194,10 +195,10 @@ class Controler:
                 
             elif(self.currentState == self.S_Landing):
                 if(self.stateChanged):           
-                    self.actions.RTL()
+                    self.actions.Land()
                     self.stateChanged = False
-                cur_pos = self.perceptions.getPos()
-                if(matchPositions(cur_pos, (cur_pos[0], cur_pos[1], 0), 0.1)): ##only care if drone is on the ground (altitude zero)
+                state = self.perceptions.getState()
+                if(not state.armed): ##change to awaiting after drone disarmed the motors
                     self.trajectoryState = self.T_None
                     self.setState(self.S_Awaiting)
 
@@ -205,14 +206,32 @@ class Controler:
                 if(self.stateChanged):                    ##no setup needed
                     self.stateChanged = False
                 
-            elapsed_time = int(round(time.time() * 1000)) - start   ##elapsed time in milliseconds
-            if((50 - elapsed_time) > 0):                                                        # sampling at 50ms
-                time.sleep((50 - elapsed_time) / 1000) ##convert to seconds for sleep function  #
+            elapsed_time = int(round(time.time() * 1000)) - start   ##elapsed time in milliseconds #
+            if((50 - elapsed_time) > 0):                                                           # sampling at 50ms
+                time.sleep((50 - elapsed_time) / 1000) ##convert to seconds for sleep function     #
                             
+    def setupOperation(self):
+        ##set mode to guided
+        while(not self.perceptions.getState().guided):
+            self.actions.setMode('GUIDED')
+            self.setupRate.sleep()
+    
+        ##arm motors
+        while(not self.perceptions.getState().armed):
+            self.actions.ArmMotors(True)
+            self.setupRate.sleep()
+
+        self.actions.TakeOff(self.TAKEOFF_ALT_DEF)
+    
     def getTrajectory(self):
         ##for testing reasons we will calculate an interpolated number of points on an straight line to the destination
         pos = self.perceptions.getPos()
-        dest = (self.dest_lat, self.dest_lng, self.dest_alt)
+        dest = (self.actions.des.x, self.actions.des.y, self.actions.des.z)
+        self.trajectory = []
+        self.trajectory.append(dest)
+        self.trajPointer = -1
+        self.trajectoryState = self.T_Active
+        return
         
         #calculate vector pointing to destination with size 1
         vector = (dest[0] - pos[0], dest[1] - pos[1], dest[2] - pos[2])
@@ -256,6 +275,9 @@ def main():
     
     #start ros
     controler.start()
+    controler.controlState() ##start controlling system
+
+    return
 
     ###comandos concentrados para iniciar o ros e os topicos necessarios
     while(not controler.perceptions.getState().guided):
@@ -285,6 +307,6 @@ def main():
         controler.operRate.sleep()
     
     return
-    
+
 if __name__ == '__main__':
     main()

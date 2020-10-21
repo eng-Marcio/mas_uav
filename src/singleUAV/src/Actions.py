@@ -7,14 +7,13 @@ import std_msgs.msg
 
 class Actions:
 
-    ##attributes
-
-
     ##constructor
     def __init__(self, controler):
         
         ##maintain pointer to controler
         self.controler = controler
+        self.des = geometry_msgs.msg.Point() ##setpoint current destination
+        self.cur_dest = geometry_msgs.msg.Point() ##current position on setpoint
 
 
 
@@ -54,44 +53,9 @@ class Actions:
     #methods topics
     def SetPoint(self, des):
         pos = geometry_msgs.msg.Point(des[0], des[1], des[2]) ##set a linear destination as a 3d point in space
+        self.cur_dest = pos
         pose = geometry_msgs.msg.Pose(position=pos)
         header = std_msgs.msg.Header()
         header.stamp = rospy.Time.now()
         self.setPoint_pub.publish(pose=pose, header=header)
 
-# [set_mode]
-# method = service
-# name = mavros/set_mode
-# msg_type = SetMode
-# dependencies = mavros_msgs.srv
-# params_name = custom_mode
-
-# [arm_motors]
-# method = service
-# name = mavros/cmd/arming
-# msg_type = CommandBool
-# dependencies = mavros_msgs.srv
-# params_name = value
-# params_type = bool
-
-# [takeoff]
-# method = service
-# name = mavros/cmd/takeoff
-# msg_type = CommandTOL
-# dependencies = mavros_msgs.srv
-# params_name = altitude
-# params_type = float
-
-# [setpoint]
-# method = topic
-# name = mavros/setpoint_position/global
-# msg_type = GeoPoseStamped
-# dependencies = geographic_msgs.msg
-# params_name = pose.position.latitude, pose.position.longitude, pose.position.altitude
-# params_type = float, float, float
-
-# [land]
-# method = service
-# name = mavros/cmd/land
-# msg_type = CommandTOL
-# dependencies = mavros_msgs.srv

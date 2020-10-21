@@ -43,18 +43,20 @@ class Com_FMC:
 
             
             ###  Send reply back to client
-            if("status" in message):
-                pos = self.controler.position
-                res = "currentState: {}; position -> lat: {}, long: {}, alt: {}".format(self.controler.currentState, pos.x, pos.y, pos.z)
-                self.socket.send(str.encode(res))
-            elif("exit" in message):
+            
+            pos = self.controler.perceptions.position
+            des = self.controler.actions.cur_dest
+            res = "currentState: {}; position -> lat: {}, long: {}, alt: {}, dest = {},{},{}".format(self.controler.currentState, pos.x, pos.y, pos.z, des.x, des.y, des.z)
+            
+            if("exit" in message):
                 self.socket.send(b"comand sent successfully.")
                 break                     ##stops the server
             else:
                 if(suc):
-                    self.socket.send(b"comand sent successfully.")
+                    res = res + "; comand sent successfully."
                 else:
-                    self.socket.send(b"comand failed.")
+                    res = res + "; comand failed."
+            self.socket.send(str.encode(res))
             
         print("server closed.")
 
@@ -65,9 +67,9 @@ class Com_FMC:
                 dest_lat = float(_list[2]) ## try parsing the 3 coordinates provided
                 dest_lng = float(_list[3])
                 dest_alt = float(_list[4])
-                self.controler.dest_lat = dest_lat  ## if parse was successful, write them as destination on system
-                self.controler.dest_lng = dest_lng
-                self.controler.dest_alt = dest_alt
+                self.controler.actions.des.x = dest_lat ## if parse was successful, write them as destination on system
+                self.controler.actions.des.y = dest_lng
+                self.controler.actions.des.z = dest_alt
 
                 ##change state if successful
                 if(self.controler.currentState == self.controler.S_Awaiting):
@@ -108,7 +110,7 @@ class FMClient:
 
     def clientTask(self):
         while(True):
-            cmd = input(">>>fmc-command>>> ")
+            cmd = raw_input(">>>fmc-command>>> ")
 
             self.socket.send(str.encode(cmd))
 
