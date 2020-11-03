@@ -1,0 +1,910 @@
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           54.98%              265.2MiB / 975.7MiB   27.18%              3.3MB / 243kB       141MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.90%               29MiB / 975.7MiB      2.97%               2.29MB / 1.45MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            2.56%               22.59MiB / 975.7MiB   2.32%               301kB / 284kB       2.05MB / 0B         0
+9436368dd4fc        mavros_2_1          3.27%               52.27MiB / 975.7MiB   5.36%               2.25MB / 820kB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.27%               59.71MiB / 975.7MiB   6.12%               1.13MB / 529kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    5.14%               50.87MiB / 975.7MiB   5.21%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           18.40%              265.1MiB / 975.7MiB   27.17%              3.31MB / 245kB      141MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.90%               29MiB / 975.7MiB      2.97%               2.29MB / 1.45MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            2.33%               22.59MiB / 975.7MiB   2.32%               304kB / 288kB       2.05MB / 0B         0
+9436368dd4fc        mavros_2_1          3.17%               52.27MiB / 975.7MiB   5.36%               2.26MB / 824kB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.19%               59.71MiB / 975.7MiB   6.12%               1.13MB / 529kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    4.90%               50.87MiB / 975.7MiB   5.21%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           16.66%              265.1MiB / 975.7MiB   27.17%              3.31MB / 247kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.66%               29MiB / 975.7MiB      2.97%               2.29MB / 1.45MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            2.01%               22.59MiB / 975.7MiB   2.32%               308kB / 291kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.02%               52.27MiB / 975.7MiB   5.36%               2.28MB / 829kB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.14%               59.71MiB / 975.7MiB   6.12%               1.13MB / 530kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    4.95%               50.88MiB / 975.7MiB   5.21%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           14.97%              265.1MiB / 975.7MiB   27.17%              3.31MB / 248kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.45%               29MiB / 975.7MiB      2.97%               2.29MB / 1.45MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            1.83%               22.59MiB / 975.7MiB   2.32%               310kB / 294kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.28%               52.27MiB / 975.7MiB   5.36%               2.3MB / 835kB       49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.21%               59.71MiB / 975.7MiB   6.12%               1.13MB / 530kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    5.46%               50.94MiB / 975.7MiB   5.22%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           14.84%              265.1MiB / 975.7MiB   27.17%              3.31MB / 250kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.54%               29MiB / 975.7MiB      2.97%               2.3MB / 1.45MB      7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            1.68%               22.59MiB / 975.7MiB   2.32%               313kB / 296kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.14%               52.27MiB / 975.7MiB   5.36%               2.32MB / 841kB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.19%               59.71MiB / 975.7MiB   6.12%               1.14MB / 530kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    5.78%               50.94MiB / 975.7MiB   5.22%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           17.35%              265.3MiB / 975.7MiB   27.19%              3.31MB / 251kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.32%               29MiB / 975.7MiB      2.97%               2.3MB / 1.45MB      7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            2.33%               22.59MiB / 975.7MiB   2.32%               315kB / 299kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.10%               52.27MiB / 975.7MiB   5.36%               2.34MB / 846kB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.21%               59.71MiB / 975.7MiB   6.12%               1.14MB / 530kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    5.20%               50.95MiB / 975.7MiB   5.22%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           18.01%              265.4MiB / 975.7MiB   27.20%              3.32MB / 253kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.47%               29MiB / 975.7MiB      2.97%               2.3MB / 1.46MB      7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            1.70%               22.59MiB / 975.7MiB   2.32%               318kB / 302kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.40%               52.27MiB / 975.7MiB   5.36%               2.36MB / 852kB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.10%               59.71MiB / 975.7MiB   6.12%               1.14MB / 530kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    5.99%               50.95MiB / 975.7MiB   5.22%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           26.10%              265.4MiB / 975.7MiB   27.20%              3.32MB / 254kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.70%               29MiB / 975.7MiB      2.97%               2.3MB / 1.46MB      7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            1.79%               22.59MiB / 975.7MiB   2.32%               320kB / 305kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.45%               52.27MiB / 975.7MiB   5.36%               2.38MB / 857kB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.08%               59.71MiB / 975.7MiB   6.12%               1.14MB / 530kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    2.73%               50.96MiB / 975.7MiB   5.22%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           9.33%               265.1MiB / 975.7MiB   27.17%              3.32MB / 256kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.20%               29MiB / 975.7MiB      2.97%               2.31MB / 1.46MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            1.67%               22.59MiB / 975.7MiB   2.32%               323kB / 308kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.19%               52.27MiB / 975.7MiB   5.36%               2.39MB / 863kB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.16%               59.71MiB / 975.7MiB   6.12%               1.15MB / 530kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    8.04%               49.24MiB / 975.7MiB   5.05%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           10.89%              265.1MiB / 975.7MiB   27.17%              3.32MB / 258kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.55%               29MiB / 975.7MiB      2.97%               2.31MB / 1.46MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            1.82%               22.59MiB / 975.7MiB   2.32%               325kB / 310kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.22%               52.27MiB / 975.7MiB   5.36%               2.41MB / 868kB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.19%               59.71MiB / 975.7MiB   6.12%               1.15MB / 531kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    4.83%               49.25MiB / 975.7MiB   5.05%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           11.34%              265.1MiB / 975.7MiB   27.17%              3.32MB / 259kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.70%               29MiB / 975.7MiB      2.97%               2.31MB / 1.46MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            1.71%               22.59MiB / 975.7MiB   2.32%               329kB / 313kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.42%               52.27MiB / 975.7MiB   5.36%               2.43MB / 873kB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.13%               59.71MiB / 975.7MiB   6.12%               1.15MB / 531kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    4.68%               49.27MiB / 975.7MiB   5.05%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           11.39%              265.1MiB / 975.7MiB   27.17%              3.32MB / 261kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.35%               29MiB / 975.7MiB      2.97%               2.31MB / 1.46MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            2.34%               22.59MiB / 975.7MiB   2.32%               331kB / 316kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.13%               52.27MiB / 975.7MiB   5.36%               2.45MB / 878kB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.07%               59.83MiB / 975.7MiB   6.13%               1.15MB / 531kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    4.56%               49.27MiB / 975.7MiB   5.05%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           9.88%               265.3MiB / 975.7MiB   27.19%              3.33MB / 262kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.66%               29MiB / 975.7MiB      2.97%               2.32MB / 1.46MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            1.71%               22.59MiB / 975.7MiB   2.32%               334kB / 319kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.19%               52.27MiB / 975.7MiB   5.36%               2.47MB / 884kB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.11%               59.71MiB / 975.7MiB   6.12%               1.16MB / 531kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    4.55%               49.28MiB / 975.7MiB   5.05%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           9.52%               265.3MiB / 975.7MiB   27.19%              3.33MB / 264kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.76%               29MiB / 975.7MiB      2.97%               2.32MB / 1.47MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            1.97%               22.59MiB / 975.7MiB   2.32%               337kB / 323kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.57%               52.27MiB / 975.7MiB   5.36%               2.49MB / 889kB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.11%               59.71MiB / 975.7MiB   6.12%               1.16MB / 531kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    7.18%               49.41MiB / 975.7MiB   5.06%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           8.48%               265.3MiB / 975.7MiB   27.19%              3.33MB / 265kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.32%               29MiB / 975.7MiB      2.97%               2.32MB / 1.47MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            1.61%               22.59MiB / 975.7MiB   2.32%               340kB / 325kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.03%               52.27MiB / 975.7MiB   5.36%               2.5MB / 895kB       49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.09%               59.71MiB / 975.7MiB   6.12%               1.16MB / 531kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    5.23%               49.55MiB / 975.7MiB   5.08%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           10.66%              265.3MiB / 975.7MiB   27.19%              3.33MB / 267kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.63%               29MiB / 975.7MiB      2.97%               2.33MB / 1.47MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            2.09%               22.59MiB / 975.7MiB   2.32%               342kB / 328kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.04%               52.27MiB / 975.7MiB   5.36%               2.52MB / 900kB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.07%               59.71MiB / 975.7MiB   6.12%               1.17MB / 531kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    11.10%              49.5MiB / 975.7MiB    5.07%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           9.55%               265.3MiB / 975.7MiB   27.19%              3.33MB / 269kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.42%               29MiB / 975.7MiB      2.97%               2.33MB / 1.47MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            1.77%               22.59MiB / 975.7MiB   2.32%               345kB / 331kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.64%               52.27MiB / 975.7MiB   5.36%               2.54MB / 905kB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.14%               59.71MiB / 975.7MiB   6.12%               1.17MB / 531kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    5.08%               49.51MiB / 975.7MiB   5.07%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           8.79%               265.3MiB / 975.7MiB   27.19%              3.33MB / 270kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.17%               29MiB / 975.7MiB      2.97%               2.33MB / 1.47MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            1.76%               22.59MiB / 975.7MiB   2.32%               347kB / 334kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          2.96%               52.27MiB / 975.7MiB   5.36%               2.56MB / 910kB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          0.96%               59.71MiB / 975.7MiB   6.12%               1.17MB / 531kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    5.80%               49.1MiB / 975.7MiB    5.03%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           9.56%               265.3MiB / 975.7MiB   27.19%              3.34MB / 272kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.45%               29MiB / 975.7MiB      2.97%               2.33MB / 1.47MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            1.78%               22.59MiB / 975.7MiB   2.32%               350kB / 337kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.26%               52.27MiB / 975.7MiB   5.36%               2.57MB / 916kB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.11%               59.71MiB / 975.7MiB   6.12%               1.17MB / 532kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    5.65%               49.1MiB / 975.7MiB    5.03%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           8.29%               265.3MiB / 975.7MiB   27.19%              3.34MB / 273kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.50%               29MiB / 975.7MiB      2.97%               2.34MB / 1.47MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            1.68%               22.59MiB / 975.7MiB   2.32%               352kB / 339kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.25%               52.27MiB / 975.7MiB   5.36%               2.59MB / 922kB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.15%               59.71MiB / 975.7MiB   6.12%               1.18MB / 532kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    7.62%               49.41MiB / 975.7MiB   5.06%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           9.00%               265.3MiB / 975.7MiB   27.19%              3.34MB / 275kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.52%               29MiB / 975.7MiB      2.97%               2.34MB / 1.48MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            1.78%               22.59MiB / 975.7MiB   2.32%               355kB / 342kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.08%               52.27MiB / 975.7MiB   5.36%               2.61MB / 927kB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.15%               59.71MiB / 975.7MiB   6.12%               1.18MB / 532kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    4.99%               49.66MiB / 975.7MiB   5.09%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           12.14%              265.3MiB / 975.7MiB   27.19%              3.34MB / 276kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.34%               29MiB / 975.7MiB      2.97%               2.34MB / 1.48MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            1.92%               22.59MiB / 975.7MiB   2.32%               357kB / 345kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.22%               52.27MiB / 975.7MiB   5.36%               2.63MB / 933kB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.11%               59.71MiB / 975.7MiB   6.12%               1.18MB / 532kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    8.52%               49.66MiB / 975.7MiB   5.09%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           10.29%              265.4MiB / 975.7MiB   27.20%              3.34MB / 278kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.40%               29MiB / 975.7MiB      2.97%               2.34MB / 1.48MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            2.10%               22.59MiB / 975.7MiB   2.32%               361kB / 348kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          2.89%               52.27MiB / 975.7MiB   5.36%               2.65MB / 938kB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.13%               59.71MiB / 975.7MiB   6.12%               1.18MB / 532kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.03%               49.66MiB / 975.7MiB   5.09%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           10.62%              265.3MiB / 975.7MiB   27.19%              3.35MB / 280kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.69%               29MiB / 975.7MiB      2.97%               2.35MB / 1.48MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            1.85%               22.59MiB / 975.7MiB   2.32%               363kB / 351kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.16%               52.27MiB / 975.7MiB   5.36%               2.67MB / 944kB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.10%               59.83MiB / 975.7MiB   6.13%               1.19MB / 532kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    5.41%               49.67MiB / 975.7MiB   5.09%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           8.21%               265.3MiB / 975.7MiB   27.19%              3.35MB / 281kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.47%               29MiB / 975.7MiB      2.97%               2.35MB / 1.48MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            1.96%               22.59MiB / 975.7MiB   2.32%               366kB / 354kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.33%               52.27MiB / 975.7MiB   5.36%               2.68MB / 949kB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.15%               59.71MiB / 975.7MiB   6.12%               1.19MB / 532kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    4.97%               49.67MiB / 975.7MiB   5.09%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           7.74%               265.3MiB / 975.7MiB   27.19%              3.35MB / 283kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.29%               29MiB / 975.7MiB      2.97%               2.35MB / 1.48MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            1.69%               22.59MiB / 975.7MiB   2.32%               368kB / 356kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.17%               52.27MiB / 975.7MiB   5.36%               2.7MB / 955kB       49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.09%               59.83MiB / 975.7MiB   6.13%               1.19MB / 533kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    4.29%               49.67MiB / 975.7MiB   5.09%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           13.81%              265.3MiB / 975.7MiB   27.19%              3.35MB / 285kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.35%               29MiB / 975.7MiB      2.97%               2.35MB / 1.48MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            2.80%               22.59MiB / 975.7MiB   2.32%               372kB / 360kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.24%               52.27MiB / 975.7MiB   5.36%               2.72MB / 961kB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.16%               59.71MiB / 975.7MiB   6.12%               1.2MB / 533kB       41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    4.60%               49.68MiB / 975.7MiB   5.09%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           8.54%               265.3MiB / 975.7MiB   27.19%              3.35MB / 287kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.63%               29MiB / 975.7MiB      2.97%               2.36MB / 1.49MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            1.83%               22.59MiB / 975.7MiB   2.32%               375kB / 364kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.19%               52.27MiB / 975.7MiB   5.36%               2.74MB / 966kB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          0.98%               59.71MiB / 975.7MiB   6.12%               1.2MB / 533kB       41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    4.15%               49.68MiB / 975.7MiB   5.09%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           9.39%               265.2MiB / 975.7MiB   27.18%              3.36MB / 289kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.32%               29MiB / 975.7MiB      2.97%               2.36MB / 1.49MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            1.85%               22.59MiB / 975.7MiB   2.32%               378kB / 367kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.10%               52.27MiB / 975.7MiB   5.36%               2.76MB / 970kB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.13%               59.71MiB / 975.7MiB   6.12%               1.2MB / 533kB       41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    6.05%               49.69MiB / 975.7MiB   5.09%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           7.97%               265.2MiB / 975.7MiB   27.18%              3.36MB / 290kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.34%               29MiB / 975.7MiB      2.97%               2.36MB / 1.49MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            1.72%               22.59MiB / 975.7MiB   2.32%               381kB / 370kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.10%               52.28MiB / 975.7MiB   5.36%               2.78MB / 976kB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.07%               59.71MiB / 975.7MiB   6.12%               1.2MB / 533kB       41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    5.19%               49.7MiB / 975.7MiB    5.09%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           7.87%               265.4MiB / 975.7MiB   27.21%              3.36MB / 292kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.57%               29MiB / 975.7MiB      2.97%               2.36MB / 1.49MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            1.79%               22.59MiB / 975.7MiB   2.32%               383kB / 373kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.08%               52.28MiB / 975.7MiB   5.36%               2.79MB / 981kB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.12%               59.71MiB / 975.7MiB   6.12%               1.21MB / 533kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    4.57%               49.7MiB / 975.7MiB    5.09%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           8.47%               265.2MiB / 975.7MiB   27.18%              3.36MB / 293kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.40%               29MiB / 975.7MiB      2.97%               2.37MB / 1.49MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            1.87%               22.59MiB / 975.7MiB   2.32%               387kB / 376kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.11%               52.28MiB / 975.7MiB   5.36%               2.81MB / 987kB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.22%               59.71MiB / 975.7MiB   6.12%               1.21MB / 534kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    10.84%              49.73MiB / 975.7MiB   5.10%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           9.81%               265.2MiB / 975.7MiB   27.18%              3.36MB / 295kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.56%               29MiB / 975.7MiB      2.97%               2.37MB / 1.49MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            2.05%               22.59MiB / 975.7MiB   2.32%               389kB / 379kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          2.90%               52.28MiB / 975.7MiB   5.36%               2.83MB / 991kB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.19%               59.71MiB / 975.7MiB   6.12%               1.21MB / 534kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    4.73%               49.73MiB / 975.7MiB   5.10%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           7.97%               265.2MiB / 975.7MiB   27.18%              3.37MB / 297kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.50%               29MiB / 975.7MiB      2.97%               2.37MB / 1.5MB      7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            1.59%               22.59MiB / 975.7MiB   2.32%               392kB / 382kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.09%               52.28MiB / 975.7MiB   5.36%               2.85MB / 996kB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.13%               59.71MiB / 975.7MiB   6.12%               1.21MB / 534kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    4.21%               49.73MiB / 975.7MiB   5.10%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           23.16%              265.4MiB / 975.7MiB   27.20%              3.37MB / 298kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.38%               29MiB / 975.7MiB      2.97%               2.37MB / 1.5MB      7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            1.88%               22.59MiB / 975.7MiB   2.32%               394kB / 384kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.38%               52.28MiB / 975.7MiB   5.36%               2.87MB / 1MB        49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.14%               59.71MiB / 975.7MiB   6.12%               1.22MB / 534kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    4.98%               49.73MiB / 975.7MiB   5.10%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           10.31%              265.4MiB / 975.7MiB   27.20%              3.37MB / 300kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.44%               29MiB / 975.7MiB      2.97%               2.38MB / 1.5MB      7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            1.71%               22.59MiB / 975.7MiB   2.32%               398kB / 387kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.42%               52.28MiB / 975.7MiB   5.36%               2.88MB / 1.01MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.09%               59.71MiB / 975.7MiB   6.12%               1.22MB / 534kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    4.79%               49.76MiB / 975.7MiB   5.10%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           8.33%               265.4MiB / 975.7MiB   27.20%              3.37MB / 301kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.41%               29MiB / 975.7MiB      2.97%               2.38MB / 1.5MB      7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            1.86%               22.59MiB / 975.7MiB   2.32%               400kB / 391kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.23%               52.28MiB / 975.7MiB   5.36%               2.9MB / 1.01MB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.06%               59.71MiB / 975.7MiB   6.12%               1.22MB / 534kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    8.14%               49.89MiB / 975.7MiB   5.11%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           7.64%               265.4MiB / 975.7MiB   27.20%              3.37MB / 303kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.39%               29MiB / 975.7MiB      2.97%               2.38MB / 1.5MB      7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            1.75%               22.59MiB / 975.7MiB   2.32%               403kB / 393kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          2.96%               52.28MiB / 975.7MiB   5.36%               2.92MB / 1.02MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.01%               59.71MiB / 975.7MiB   6.12%               1.22MB / 534kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    4.41%               49.79MiB / 975.7MiB   5.10%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           8.28%               265.4MiB / 975.7MiB   27.20%              3.37MB / 304kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.42%               29MiB / 975.7MiB      2.97%               2.38MB / 1.5MB      7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            1.68%               22.59MiB / 975.7MiB   2.32%               405kB / 396kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.33%               52.28MiB / 975.7MiB   5.36%               2.94MB / 1.02MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.18%               59.71MiB / 975.7MiB   6.12%               1.23MB / 535kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    10.06%              49.82MiB / 975.7MiB   5.11%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           4.09%               265.4MiB / 975.7MiB   27.20%              3.37MB / 304kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.46%               29MiB / 975.7MiB      2.97%               2.39MB / 1.5MB      7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.37%               22.59MiB / 975.7MiB   2.32%               406kB / 396kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.09%               52.28MiB / 975.7MiB   5.36%               2.96MB / 1.03MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.05%               59.71MiB / 975.7MiB   6.12%               1.23MB / 535kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    4.37%               49.83MiB / 975.7MiB   5.11%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           5.32%               265.4MiB / 975.7MiB   27.20%              3.37MB / 304kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.40%               29MiB / 975.7MiB      2.97%               2.39MB / 1.51MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.36%               22.59MiB / 975.7MiB   2.32%               406kB / 396kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.27%               52.28MiB / 975.7MiB   5.36%               2.98MB / 1.04MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.19%               59.71MiB / 975.7MiB   6.12%               1.23MB / 535kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    9.07%               49.84MiB / 975.7MiB   5.11%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           4.68%               265.4MiB / 975.7MiB   27.20%              3.37MB / 304kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.47%               29MiB / 975.7MiB      2.97%               2.39MB / 1.51MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.35%               22.59MiB / 975.7MiB   2.32%               406kB / 396kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.28%               52.28MiB / 975.7MiB   5.36%               2.99MB / 1.04MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.01%               59.71MiB / 975.7MiB   6.12%               1.24MB / 535kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    4.26%               49.85MiB / 975.7MiB   5.11%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           4.00%               265.4MiB / 975.7MiB   27.20%              3.37MB / 304kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.52%               29MiB / 975.7MiB      2.97%               2.39MB / 1.51MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.38%               22.59MiB / 975.7MiB   2.32%               406kB / 396kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.30%               52.28MiB / 975.7MiB   5.36%               3.01MB / 1.05MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.06%               59.71MiB / 975.7MiB   6.12%               1.24MB / 535kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.02%               49.86MiB / 975.7MiB   5.11%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           4.37%               265.4MiB / 975.7MiB   27.20%              3.37MB / 305kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.45%               29MiB / 975.7MiB      2.97%               2.4MB / 1.51MB      7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.36%               22.59MiB / 975.7MiB   2.32%               406kB / 396kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.12%               52.28MiB / 975.7MiB   5.36%               3.03MB / 1.05MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.01%               59.71MiB / 975.7MiB   6.12%               1.24MB / 535kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    4.73%               49.86MiB / 975.7MiB   5.11%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           4.47%               265.4MiB / 975.7MiB   27.20%              3.38MB / 305kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.55%               29MiB / 975.7MiB      2.97%               2.4MB / 1.51MB      7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.60%               22.59MiB / 975.7MiB   2.32%               407kB / 398kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.09%               52.28MiB / 975.7MiB   5.36%               3.05MB / 1.06MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.04%               59.71MiB / 975.7MiB   6.12%               1.24MB / 535kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    6.04%               49.87MiB / 975.7MiB   5.11%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           4.32%               265.4MiB / 975.7MiB   27.20%              3.38MB / 305kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.41%               29MiB / 975.7MiB      2.97%               2.4MB / 1.51MB      7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.33%               22.59MiB / 975.7MiB   2.32%               407kB / 398kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.02%               52.28MiB / 975.7MiB   5.36%               3.07MB / 1.06MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.05%               59.71MiB / 975.7MiB   6.12%               1.25MB / 536kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    30.01%              49.3MiB / 975.7MiB    5.05%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           4.63%               265.4MiB / 975.7MiB   27.20%              3.38MB / 305kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.46%               29MiB / 975.7MiB      2.97%               2.41MB / 1.51MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.39%               22.59MiB / 975.7MiB   2.32%               407kB / 398kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.12%               52.28MiB / 975.7MiB   5.36%               3.08MB / 1.07MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.17%               59.71MiB / 975.7MiB   6.12%               1.25MB / 536kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    1.01%               49.25MiB / 975.7MiB   5.05%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           4.68%               265.4MiB / 975.7MiB   27.20%              3.38MB / 305kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.97%               29MiB / 975.7MiB      2.97%               2.41MB / 1.51MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.38%               22.59MiB / 975.7MiB   2.32%               407kB / 398kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.65%               52.28MiB / 975.7MiB   5.36%               3.1MB / 1.08MB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.12%               59.71MiB / 975.7MiB   6.12%               1.25MB / 536kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    5.59%               49.25MiB / 975.7MiB   5.05%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           3.94%               265.4MiB / 975.7MiB   27.20%              3.38MB / 305kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.56%               29MiB / 975.7MiB      2.97%               2.41MB / 1.52MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.36%               22.59MiB / 975.7MiB   2.32%               407kB / 398kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.18%               52.28MiB / 975.7MiB   5.36%               3.12MB / 1.08MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.14%               59.71MiB / 975.7MiB   6.12%               1.26MB / 536kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    5.55%               49.29MiB / 975.7MiB   5.05%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           5.35%               265.4MiB / 975.7MiB   27.20%              3.38MB / 306kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.28%               29MiB / 975.7MiB      2.97%               2.41MB / 1.52MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.87%               22.59MiB / 975.7MiB   2.32%               408kB / 399kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.03%               52.28MiB / 975.7MiB   5.36%               3.14MB / 1.09MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.05%               59.71MiB / 975.7MiB   6.12%               1.26MB / 536kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    12.19%              49.43MiB / 975.7MiB   5.07%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           12.67%              265.4MiB / 975.7MiB   27.20%              3.38MB / 306kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        4.79%               29.02MiB / 975.7MiB   2.97%               2.42MB / 1.52MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            1.08%               22.59MiB / 975.7MiB   2.32%               408kB / 400kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          4.13%               52.28MiB / 975.7MiB   5.36%               3.16MB / 1.1MB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          2.95%               59.84MiB / 975.7MiB   6.13%               1.27MB / 539kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    17.94%              49.32MiB / 975.7MiB   5.05%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           4.70%               265.4MiB / 975.7MiB   27.20%              3.38MB / 307kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.57%               29.02MiB / 975.7MiB   2.97%               2.43MB / 1.53MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.36%               22.59MiB / 975.7MiB   2.32%               409kB / 400kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.38%               52.29MiB / 975.7MiB   5.36%               3.18MB / 1.1MB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.18%               59.72MiB / 975.7MiB   6.12%               1.27MB / 541kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    5.02%               49.33MiB / 975.7MiB   5.06%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           5.65%               265.4MiB / 975.7MiB   27.20%              3.38MB / 307kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.78%               29.02MiB / 975.7MiB   2.97%               2.43MB / 1.53MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.36%               22.59MiB / 975.7MiB   2.32%               409kB / 400kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.14%               52.29MiB / 975.7MiB   5.36%               3.2MB / 1.11MB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.20%               59.54MiB / 975.7MiB   6.10%               1.27MB / 541kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    8.02%               48.04MiB / 975.7MiB   4.92%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           6.47%               265.4MiB / 975.7MiB   27.20%              3.38MB / 308kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.02%               29.02MiB / 975.7MiB   2.97%               2.43MB / 1.53MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.43%               22.59MiB / 975.7MiB   2.32%               409kB / 400kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.17%               52.29MiB / 975.7MiB   5.36%               3.22MB / 1.12MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.05%               59.54MiB / 975.7MiB   6.10%               1.28MB / 541kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    11.35%              48.3MiB / 975.7MiB    4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           9.90%               265.4MiB / 975.7MiB   27.20%              3.38MB / 309kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.39%               29.02MiB / 975.7MiB   2.97%               2.44MB / 1.54MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.37%               22.59MiB / 975.7MiB   2.32%               409kB / 400kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.36%               52.29MiB / 975.7MiB   5.36%               3.24MB / 1.12MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.09%               59.54MiB / 975.7MiB   6.10%               1.28MB / 541kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    5.41%               48.06MiB / 975.7MiB   4.93%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           7.46%               265.4MiB / 975.7MiB   27.20%              3.38MB / 310kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.18%               29.02MiB / 975.7MiB   2.97%               2.44MB / 1.54MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.39%               22.59MiB / 975.7MiB   2.32%               409kB / 400kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.27%               52.29MiB / 975.7MiB   5.36%               3.26MB / 1.13MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.10%               59.54MiB / 975.7MiB   6.10%               1.29MB / 541kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    5.17%               48.19MiB / 975.7MiB   4.94%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           7.30%               265.4MiB / 975.7MiB   27.20%              3.38MB / 311kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.22%               29.02MiB / 975.7MiB   2.97%               2.44MB / 1.54MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.36%               22.59MiB / 975.7MiB   2.32%               409kB / 400kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.36%               52.29MiB / 975.7MiB   5.36%               3.28MB / 1.13MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.14%               59.54MiB / 975.7MiB   6.10%               1.29MB / 541kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    8.65%               48.19MiB / 975.7MiB   4.94%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           5.82%               265.4MiB / 975.7MiB   27.20%              3.39MB / 311kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.90%               29.02MiB / 975.7MiB   2.97%               2.45MB / 1.54MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.37%               22.59MiB / 975.7MiB   2.32%               409kB / 400kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.16%               52.29MiB / 975.7MiB   5.36%               3.29MB / 1.14MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.09%               59.54MiB / 975.7MiB   6.10%               1.29MB / 542kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    5.27%               48.08MiB / 975.7MiB   4.93%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           7.25%               265.4MiB / 975.7MiB   27.20%              3.39MB / 312kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.00%               29.02MiB / 975.7MiB   2.97%               2.45MB / 1.55MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.33%               22.59MiB / 975.7MiB   2.32%               409kB / 400kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.09%               52.29MiB / 975.7MiB   5.36%               3.31MB / 1.15MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.06%               59.54MiB / 975.7MiB   6.10%               1.29MB / 542kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    6.22%               48.08MiB / 975.7MiB   4.93%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           6.79%               265.4MiB / 975.7MiB   27.20%              3.39MB / 313kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.46%               29.02MiB / 975.7MiB   2.97%               2.45MB / 1.55MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.69%               22.59MiB / 975.7MiB   2.32%               409kB / 400kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.54%               52.29MiB / 975.7MiB   5.36%               3.33MB / 1.15MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.08%               59.54MiB / 975.7MiB   6.10%               1.3MB / 542kB       41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.02%               48.08MiB / 975.7MiB   4.93%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           7.67%               265.4MiB / 975.7MiB   27.20%              3.39MB / 314kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.54%               29.02MiB / 975.7MiB   2.97%               2.46MB / 1.55MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.38%               22.59MiB / 975.7MiB   2.32%               409kB / 400kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.45%               52.29MiB / 975.7MiB   5.36%               3.35MB / 1.16MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.09%               59.54MiB / 975.7MiB   6.10%               1.3MB / 542kB       41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    5.00%               48.09MiB / 975.7MiB   4.93%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           9.98%               265.4MiB / 975.7MiB   27.20%              3.39MB / 315kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        3.38%               29.02MiB / 975.7MiB   2.97%               2.46MB / 1.56MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.96%               22.59MiB / 975.7MiB   2.32%               410kB / 401kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.48%               52.29MiB / 975.7MiB   5.36%               3.37MB / 1.16MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.83%               59.54MiB / 975.7MiB   6.10%               1.3MB / 544kB       41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    19.65%              48.09MiB / 975.7MiB   4.93%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           9.49%               265.6MiB / 975.7MiB   27.22%              3.39MB / 316kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.30%               29.02MiB / 975.7MiB   2.97%               2.47MB / 1.56MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.35%               22.59MiB / 975.7MiB   2.32%               410kB / 401kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.30%               52.29MiB / 975.7MiB   5.36%               3.39MB / 1.17MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.09%               59.54MiB / 975.7MiB   6.10%               1.31MB / 544kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    5.79%               48.09MiB / 975.7MiB   4.93%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           6.08%               265.4MiB / 975.7MiB   27.20%              3.4MB / 317kB       142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.73%               29.02MiB / 975.7MiB   2.97%               2.47MB / 1.56MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.35%               22.59MiB / 975.7MiB   2.32%               410kB / 401kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.35%               52.29MiB / 975.7MiB   5.36%               3.41MB / 1.17MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.09%               59.54MiB / 975.7MiB   6.10%               1.31MB / 544kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    9.18%               48.21MiB / 975.7MiB   4.94%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           9.05%               265.6MiB / 975.7MiB   27.22%              3.4MB / 318kB       142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.28%               29.02MiB / 975.7MiB   2.97%               2.47MB / 1.57MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.38%               22.59MiB / 975.7MiB   2.32%               410kB / 401kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.27%               52.29MiB / 975.7MiB   5.36%               3.43MB / 1.18MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.15%               59.54MiB / 975.7MiB   6.10%               1.31MB / 544kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    4.68%               48.09MiB / 975.7MiB   4.93%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           10.50%              265.4MiB / 975.7MiB   27.21%              3.4MB / 319kB       142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.26%               29.02MiB / 975.7MiB   2.97%               2.48MB / 1.57MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.40%               22.59MiB / 975.7MiB   2.32%               410kB / 401kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.05%               52.29MiB / 975.7MiB   5.36%               3.44MB / 1.19MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.05%               59.54MiB / 975.7MiB   6.10%               1.32MB / 545kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    5.21%               48.09MiB / 975.7MiB   4.93%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           7.40%               265.4MiB / 975.7MiB   27.21%              3.4MB / 320kB       142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.18%               29.02MiB / 975.7MiB   2.97%               2.48MB / 1.57MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.36%               22.59MiB / 975.7MiB   2.32%               410kB / 401kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.17%               52.29MiB / 975.7MiB   5.36%               3.46MB / 1.19MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.13%               59.54MiB / 975.7MiB   6.10%               1.32MB / 545kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    10.71%              48.11MiB / 975.7MiB   4.93%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           6.55%               265.5MiB / 975.7MiB   27.21%              3.4MB / 321kB       142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.68%               29.02MiB / 975.7MiB   2.97%               2.48MB / 1.58MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.36%               22.59MiB / 975.7MiB   2.32%               410kB / 401kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.08%               52.29MiB / 975.7MiB   5.36%               3.48MB / 1.2MB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.17%               59.54MiB / 975.7MiB   6.10%               1.32MB / 545kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    10.89%              48.17MiB / 975.7MiB   4.94%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           7.05%               265.5MiB / 975.7MiB   27.21%              3.4MB / 321kB       142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.54%               29.02MiB / 975.7MiB   2.97%               2.49MB / 1.58MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.54%               22.59MiB / 975.7MiB   2.32%               410kB / 401kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          2.87%               52.29MiB / 975.7MiB   5.36%               3.5MB / 1.2MB       49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.06%               59.54MiB / 975.7MiB   6.10%               1.32MB / 545kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    5.33%               48.12MiB / 975.7MiB   4.93%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           8.58%               265.6MiB / 975.7MiB   27.22%              3.41MB / 323kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.43%               29.02MiB / 975.7MiB   2.97%               2.49MB / 1.58MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.36%               22.59MiB / 975.7MiB   2.32%               411kB / 402kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.34%               52.29MiB / 975.7MiB   5.36%               3.52MB / 1.21MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.17%               59.66MiB / 975.7MiB   6.11%               1.33MB / 545kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    5.56%               48.12MiB / 975.7MiB   4.93%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           7.18%               265.7MiB / 975.7MiB   27.23%              3.41MB / 323kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.95%               29.02MiB / 975.7MiB   2.97%               2.49MB / 1.58MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.38%               22.59MiB / 975.7MiB   2.32%               411kB / 402kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.24%               52.29MiB / 975.7MiB   5.36%               3.53MB / 1.21MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.09%               59.54MiB / 975.7MiB   6.10%               1.33MB / 545kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    5.75%               48.12MiB / 975.7MiB   4.93%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           9.49%               265.7MiB / 975.7MiB   27.23%              3.41MB / 324kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.25%               29.02MiB / 975.7MiB   2.97%               2.5MB / 1.59MB      7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.40%               22.59MiB / 975.7MiB   2.32%               411kB / 402kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.56%               52.29MiB / 975.7MiB   5.36%               3.55MB / 1.22MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.14%               59.54MiB / 975.7MiB   6.10%               1.33MB / 545kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    5.40%               48.12MiB / 975.7MiB   4.93%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           6.51%               265.6MiB / 975.7MiB   27.22%              3.41MB / 325kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.10%               29.02MiB / 975.7MiB   2.97%               2.5MB / 1.59MB      7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.35%               22.59MiB / 975.7MiB   2.32%               411kB / 402kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.17%               52.29MiB / 975.7MiB   5.36%               3.57MB / 1.22MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.06%               59.54MiB / 975.7MiB   6.10%               1.33MB / 545kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    8.07%               48.13MiB / 975.7MiB   4.93%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           7.59%               265.6MiB / 975.7MiB   27.22%              3.41MB / 326kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.12%               29.02MiB / 975.7MiB   2.97%               2.5MB / 1.59MB      7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.35%               22.59MiB / 975.7MiB   2.32%               411kB / 402kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.45%               52.29MiB / 975.7MiB   5.36%               3.59MB / 1.23MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.09%               59.54MiB / 975.7MiB   6.10%               1.34MB / 546kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    5.42%               48.13MiB / 975.7MiB   4.93%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           7.37%               265.6MiB / 975.7MiB   27.22%              3.41MB / 326kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.98%               29.02MiB / 975.7MiB   2.97%               2.51MB / 1.59MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.36%               22.59MiB / 975.7MiB   2.32%               411kB / 402kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.16%               52.29MiB / 975.7MiB   5.36%               3.61MB / 1.23MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.07%               59.54MiB / 975.7MiB   6.10%               1.34MB / 546kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    27.49%              48.27MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           6.69%               265.6MiB / 975.7MiB   27.22%              3.41MB / 327kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.98%               29.02MiB / 975.7MiB   2.97%               2.51MB / 1.6MB      7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.37%               22.59MiB / 975.7MiB   2.32%               411kB / 402kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          2.99%               52.29MiB / 975.7MiB   5.36%               3.63MB / 1.24MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.06%               59.54MiB / 975.7MiB   6.10%               1.34MB / 546kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    5.38%               48.17MiB / 975.7MiB   4.94%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           6.80%               265.6MiB / 975.7MiB   27.22%              3.42MB / 328kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.16%               29.02MiB / 975.7MiB   2.97%               2.51MB / 1.6MB      7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.44%               22.59MiB / 975.7MiB   2.32%               411kB / 402kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.17%               52.29MiB / 975.7MiB   5.36%               3.64MB / 1.25MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.16%               59.54MiB / 975.7MiB   6.10%               1.35MB / 546kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    4.87%               48.17MiB / 975.7MiB   4.94%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           7.73%               265.6MiB / 975.7MiB   27.22%              3.42MB / 328kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.98%               29.02MiB / 975.7MiB   2.97%               2.51MB / 1.6MB      7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.33%               22.59MiB / 975.7MiB   2.32%               411kB / 402kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.48%               52.29MiB / 975.7MiB   5.36%               3.66MB / 1.25MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.04%               59.54MiB / 975.7MiB   6.10%               1.35MB / 546kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    7.83%               48.17MiB / 975.7MiB   4.94%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           7.17%               265.6MiB / 975.7MiB   27.22%              3.42MB / 329kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.96%               29.02MiB / 975.7MiB   2.97%               2.52MB / 1.6MB      7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.32%               22.59MiB / 975.7MiB   2.32%               411kB / 402kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.18%               52.29MiB / 975.7MiB   5.36%               3.68MB / 1.26MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.09%               59.54MiB / 975.7MiB   6.10%               1.35MB / 546kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    5.28%               48.17MiB / 975.7MiB   4.94%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           6.79%               265.6MiB / 975.7MiB   27.22%              3.42MB / 330kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.84%               29.02MiB / 975.7MiB   2.97%               2.52MB / 1.61MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.39%               22.59MiB / 975.7MiB   2.32%               411kB / 402kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.17%               52.29MiB / 975.7MiB   5.36%               3.7MB / 1.26MB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.05%               59.54MiB / 975.7MiB   6.10%               1.35MB / 546kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    11.18%              48.3MiB / 975.7MiB    4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           7.15%               265.7MiB / 975.7MiB   27.23%              3.42MB / 330kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.22%               29.02MiB / 975.7MiB   2.97%               2.52MB / 1.61MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.35%               22.59MiB / 975.7MiB   2.32%               411kB / 402kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.15%               52.29MiB / 975.7MiB   5.36%               3.72MB / 1.27MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.06%               59.54MiB / 975.7MiB   6.10%               1.36MB / 546kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    9.02%               48.2MiB / 975.7MiB    4.94%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           6.73%               265.7MiB / 975.7MiB   27.23%              3.42MB / 331kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.78%               29.02MiB / 975.7MiB   2.97%               2.53MB / 1.61MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.56%               22.59MiB / 975.7MiB   2.32%               411kB / 402kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.15%               52.29MiB / 975.7MiB   5.36%               3.74MB / 1.27MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.10%               59.54MiB / 975.7MiB   6.10%               1.36MB / 547kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    5.65%               48.2MiB / 975.7MiB    4.94%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           6.83%               265.7MiB / 975.7MiB   27.23%              3.42MB / 332kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.83%               29.02MiB / 975.7MiB   2.97%               2.53MB / 1.61MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.40%               22.59MiB / 975.7MiB   2.32%               411kB / 402kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          2.93%               52.29MiB / 975.7MiB   5.36%               3.75MB / 1.28MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.08%               59.54MiB / 975.7MiB   6.10%               1.36MB / 547kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    4.78%               48.2MiB / 975.7MiB    4.94%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           6.51%               265.7MiB / 975.7MiB   27.23%              3.42MB / 332kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.99%               29.02MiB / 975.7MiB   2.97%               2.53MB / 1.62MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.35%               22.59MiB / 975.7MiB   2.32%               411kB / 402kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.17%               52.29MiB / 975.7MiB   5.36%               3.77MB / 1.28MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.12%               59.54MiB / 975.7MiB   6.10%               1.37MB / 547kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    5.50%               48.2MiB / 975.7MiB    4.94%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           7.81%               265.7MiB / 975.7MiB   27.23%              3.43MB / 333kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.14%               29.02MiB / 975.7MiB   2.97%               2.54MB / 1.62MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.37%               22.59MiB / 975.7MiB   2.32%               411kB / 402kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.11%               52.29MiB / 975.7MiB   5.36%               3.79MB / 1.29MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.15%               59.54MiB / 975.7MiB   6.10%               1.37MB / 547kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    4.90%               48.2MiB / 975.7MiB    4.94%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           7.15%               265.7MiB / 975.7MiB   27.23%              3.43MB / 334kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.13%               29.02MiB / 975.7MiB   2.97%               2.54MB / 1.62MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.37%               22.59MiB / 975.7MiB   2.32%               411kB / 402kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.23%               52.29MiB / 975.7MiB   5.36%               3.81MB / 1.3MB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.22%               59.54MiB / 975.7MiB   6.10%               1.37MB / 547kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    10.23%              48.21MiB / 975.7MiB   4.94%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           12.03%              265.8MiB / 975.7MiB   27.24%              3.43MB / 335kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.35%               29.02MiB / 975.7MiB   2.97%               2.54MB / 1.62MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.87%               22.59MiB / 975.7MiB   2.32%               411kB / 403kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.45%               52.29MiB / 975.7MiB   5.36%               3.83MB / 1.3MB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.09%               59.54MiB / 975.7MiB   6.10%               1.38MB / 547kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    5.44%               48.21MiB / 975.7MiB   4.94%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           10.60%              265.8MiB / 975.7MiB   27.24%              3.43MB / 336kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        3.09%               29.02MiB / 975.7MiB   2.97%               2.55MB / 1.63MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.95%               22.59MiB / 975.7MiB   2.32%               412kB / 404kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.33%               52.29MiB / 975.7MiB   5.36%               3.85MB / 1.31MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          2.04%               59.77MiB / 975.7MiB   6.13%               1.38MB / 549kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    4.79%               48.21MiB / 975.7MiB   4.94%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           9.01%               265.8MiB / 975.7MiB   27.24%              3.43MB / 337kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.66%               29.02MiB / 975.7MiB   2.97%               2.56MB / 1.64MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.38%               22.59MiB / 975.7MiB   2.32%               412kB / 404kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          2.86%               52.29MiB / 975.7MiB   5.36%               3.87MB / 1.32MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.03%               59.55MiB / 975.7MiB   6.10%               1.39MB / 552kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    9.92%               48.23MiB / 975.7MiB   4.94%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           6.09%               265.8MiB / 975.7MiB   27.24%              3.43MB / 337kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.74%               29.02MiB / 975.7MiB   2.97%               2.56MB / 1.64MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.37%               22.59MiB / 975.7MiB   2.32%               412kB / 404kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.31%               52.29MiB / 975.7MiB   5.36%               3.89MB / 1.32MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.09%               59.55MiB / 975.7MiB   6.10%               1.39MB / 552kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    2.15%               48.23MiB / 975.7MiB   4.94%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           5.90%               265.8MiB / 975.7MiB   27.24%              3.43MB / 338kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.38%               29.02MiB / 975.7MiB   2.97%               2.56MB / 1.64MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.60%               22.59MiB / 975.7MiB   2.32%               413kB / 404kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.36%               52.29MiB / 975.7MiB   5.36%               3.9MB / 1.33MB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.21%               59.55MiB / 975.7MiB   6.10%               1.39MB / 552kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    22.80%              48.61MiB / 975.7MiB   4.98%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           6.62%               265.8MiB / 975.7MiB   27.24%              3.43MB / 339kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.09%               29.02MiB / 975.7MiB   2.97%               2.57MB / 1.64MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.38%               22.59MiB / 975.7MiB   2.32%               413kB / 404kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.15%               52.29MiB / 975.7MiB   5.36%               3.92MB / 1.33MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.05%               59.55MiB / 975.7MiB   6.10%               1.39MB / 552kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.02%               48.25MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           6.19%               265.8MiB / 975.7MiB   27.24%              3.44MB / 340kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.02%               29.02MiB / 975.7MiB   2.97%               2.57MB / 1.65MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.36%               22.59MiB / 975.7MiB   2.32%               413kB / 404kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          2.84%               52.29MiB / 975.7MiB   5.36%               3.94MB / 1.33MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.05%               59.55MiB / 975.7MiB   6.10%               1.39MB / 552kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.02%               48.25MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           7.26%               265.8MiB / 975.7MiB   27.24%              3.44MB / 341kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.99%               29.02MiB / 975.7MiB   2.97%               2.57MB / 1.65MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.35%               22.59MiB / 975.7MiB   2.32%               413kB / 404kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.01%               52.29MiB / 975.7MiB   5.36%               3.96MB / 1.34MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.09%               59.55MiB / 975.7MiB   6.10%               1.39MB / 552kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.03%               48.25MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           6.41%               265.8MiB / 975.7MiB   27.24%              3.44MB / 341kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.75%               29.02MiB / 975.7MiB   2.97%               2.58MB / 1.65MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.43%               22.59MiB / 975.7MiB   2.32%               413kB / 404kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          2.83%               52.29MiB / 975.7MiB   5.36%               3.98MB / 1.34MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.03%               59.55MiB / 975.7MiB   6.10%               1.39MB / 552kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.04%               48.25MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           7.54%               265.8MiB / 975.7MiB   27.24%              3.44MB / 342kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.43%               29.02MiB / 975.7MiB   2.97%               2.58MB / 1.66MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.34%               22.59MiB / 975.7MiB   2.32%               413kB / 404kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.64%               52.29MiB / 975.7MiB   5.36%               4MB / 1.34MB        49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          0.94%               59.55MiB / 975.7MiB   6.10%               1.39MB / 552kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.03%               48.25MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           6.62%               265.8MiB / 975.7MiB   27.24%              3.44MB / 343kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.18%               29.02MiB / 975.7MiB   2.97%               2.58MB / 1.66MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.36%               22.59MiB / 975.7MiB   2.32%               413kB / 404kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.16%               52.29MiB / 975.7MiB   5.36%               4.02MB / 1.34MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.04%               59.55MiB / 975.7MiB   6.10%               1.39MB / 552kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.02%               48.25MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           7.11%               265.8MiB / 975.7MiB   27.24%              3.44MB / 344kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.04%               29.02MiB / 975.7MiB   2.97%               2.59MB / 1.66MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.35%               22.59MiB / 975.7MiB   2.32%               413kB / 404kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.12%               52.29MiB / 975.7MiB   5.36%               4.03MB / 1.35MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.00%               59.55MiB / 975.7MiB   6.10%               1.39MB / 552kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.07%               48.25MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           7.88%               265.8MiB / 975.7MiB   27.24%              3.45MB / 345kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.21%               29.02MiB / 975.7MiB   2.97%               2.59MB / 1.66MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.35%               22.59MiB / 975.7MiB   2.32%               413kB / 404kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.02%               52.3MiB / 975.7MiB    5.36%               4.05MB / 1.35MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          0.98%               59.55MiB / 975.7MiB   6.10%               1.39MB / 552kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.04%               48.25MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           8.92%               265.8MiB / 975.7MiB   27.24%              3.45MB / 346kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        3.74%               29.02MiB / 975.7MiB   2.97%               2.6MB / 1.67MB      7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.93%               22.59MiB / 975.7MiB   2.32%               413kB / 405kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.34%               52.42MiB / 975.7MiB   5.37%               4.07MB / 1.35MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.66%               59.55MiB / 975.7MiB   6.10%               1.39MB / 554kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.02%               48.25MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           9.58%               265.8MiB / 975.7MiB   27.24%              3.45MB / 347kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.18%               29.02MiB / 975.7MiB   2.97%               2.6MB / 1.67MB      7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.45%               22.59MiB / 975.7MiB   2.32%               413kB / 405kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          2.95%               52.3MiB / 975.7MiB    5.36%               4.09MB / 1.36MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.03%               59.55MiB / 975.7MiB   6.10%               1.39MB / 554kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.02%               48.27MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           7.17%               265.8MiB / 975.7MiB   27.24%              3.45MB / 348kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.05%               29.02MiB / 975.7MiB   2.97%               2.6MB / 1.68MB      7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.34%               22.59MiB / 975.7MiB   2.32%               413kB / 405kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.04%               52.3MiB / 975.7MiB    5.36%               4.11MB / 1.36MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.00%               59.55MiB / 975.7MiB   6.10%               1.39MB / 554kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.12%               48.27MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           6.95%               265.8MiB / 975.7MiB   27.24%              3.45MB / 349kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.10%               29.02MiB / 975.7MiB   2.97%               2.61MB / 1.68MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.38%               22.59MiB / 975.7MiB   2.32%               413kB / 405kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          2.98%               52.3MiB / 975.7MiB    5.36%               4.13MB / 1.36MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.05%               59.55MiB / 975.7MiB   6.10%               1.39MB / 554kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.15%               48.27MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           7.52%               265.8MiB / 975.7MiB   27.24%              3.45MB / 350kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.21%               29.02MiB / 975.7MiB   2.97%               2.61MB / 1.68MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.35%               22.59MiB / 975.7MiB   2.32%               413kB / 405kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.06%               52.3MiB / 975.7MiB    5.36%               4.14MB / 1.37MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.07%               59.55MiB / 975.7MiB   6.10%               1.39MB / 554kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.02%               48.27MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           6.85%               265.8MiB / 975.7MiB   27.24%              3.46MB / 351kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.69%               29.02MiB / 975.7MiB   2.97%               2.61MB / 1.68MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.35%               22.59MiB / 975.7MiB   2.32%               413kB / 405kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          2.81%               52.3MiB / 975.7MiB    5.36%               4.16MB / 1.37MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.04%               59.55MiB / 975.7MiB   6.10%               1.39MB / 554kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.02%               48.27MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           6.13%               265.8MiB / 975.7MiB   27.24%              3.46MB / 352kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.24%               29.02MiB / 975.7MiB   2.97%               2.62MB / 1.69MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.62%               22.59MiB / 975.7MiB   2.32%               413kB / 405kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          2.76%               52.3MiB / 975.7MiB    5.36%               4.18MB / 1.37MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          0.96%               59.55MiB / 975.7MiB   6.10%               1.39MB / 554kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.02%               48.27MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           34.48%              267.3MiB / 975.7MiB   27.40%              3.46MB / 352kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.75%               29.02MiB / 975.7MiB   2.97%               2.62MB / 1.69MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.36%               22.59MiB / 975.7MiB   2.32%               413kB / 405kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          2.89%               52.3MiB / 975.7MiB    5.36%               4.2MB / 1.37MB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.01%               59.55MiB / 975.7MiB   6.10%               1.39MB / 554kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.02%               48.27MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           7.25%               267.3MiB / 975.7MiB   27.39%              3.46MB / 353kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.77%               29.02MiB / 975.7MiB   2.97%               2.62MB / 1.69MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.59%               22.59MiB / 975.7MiB   2.32%               414kB / 405kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.43%               52.3MiB / 975.7MiB    5.36%               4.22MB / 1.38MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.09%               59.55MiB / 975.7MiB   6.10%               1.39MB / 554kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.02%               48.27MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           7.99%               267MiB / 975.7MiB     27.36%              3.46MB / 355kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.94%               29.02MiB / 975.7MiB   2.97%               2.63MB / 1.7MB      7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.57%               22.59MiB / 975.7MiB   2.32%               414kB / 405kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          2.82%               52.3MiB / 975.7MiB    5.36%               4.23MB / 1.38MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.04%               59.55MiB / 975.7MiB   6.10%               1.39MB / 554kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.02%               48.27MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           7.28%               267MiB / 975.7MiB     27.36%              3.46MB / 355kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.30%               29.02MiB / 975.7MiB   2.97%               2.63MB / 1.7MB      7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.34%               22.59MiB / 975.7MiB   2.32%               414kB / 405kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          2.96%               52.3MiB / 975.7MiB    5.36%               4.25MB / 1.38MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.08%               59.55MiB / 975.7MiB   6.10%               1.39MB / 554kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.08%               48.27MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           6.30%               267MiB / 975.7MiB     27.36%              3.47MB / 356kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.95%               29.02MiB / 975.7MiB   2.97%               2.63MB / 1.7MB      7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.38%               22.59MiB / 975.7MiB   2.32%               414kB / 405kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          2.91%               52.3MiB / 975.7MiB    5.36%               4.27MB / 1.38MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.13%               59.55MiB / 975.7MiB   6.10%               1.39MB / 554kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.02%               48.27MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           7.01%               267MiB / 975.7MiB     27.36%              3.47MB / 357kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.17%               29.02MiB / 975.7MiB   2.97%               2.64MB / 1.7MB      7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.43%               22.59MiB / 975.7MiB   2.32%               414kB / 405kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.00%               52.3MiB / 975.7MiB    5.36%               4.29MB / 1.39MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.13%               59.55MiB / 975.7MiB   6.10%               1.39MB / 554kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.02%               48.27MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           7.37%               267MiB / 975.7MiB     27.36%              3.47MB / 358kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.97%               29.02MiB / 975.7MiB   2.97%               2.64MB / 1.71MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.36%               22.59MiB / 975.7MiB   2.32%               414kB / 405kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.08%               52.3MiB / 975.7MiB    5.36%               4.31MB / 1.39MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.07%               59.55MiB / 975.7MiB   6.10%               1.39MB / 554kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.02%               48.27MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           6.79%               267MiB / 975.7MiB     27.36%              3.47MB / 359kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.13%               29.02MiB / 975.7MiB   2.97%               2.64MB / 1.71MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.35%               22.59MiB / 975.7MiB   2.32%               414kB / 405kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          2.96%               52.3MiB / 975.7MiB    5.36%               4.33MB / 1.39MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.06%               59.55MiB / 975.7MiB   6.10%               1.39MB / 554kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.09%               48.27MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           6.21%               267MiB / 975.7MiB     27.36%              3.47MB / 359kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.01%               29.02MiB / 975.7MiB   2.97%               2.65MB / 1.71MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.36%               22.59MiB / 975.7MiB   2.32%               414kB / 405kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          2.96%               52.3MiB / 975.7MiB    5.36%               4.34MB / 1.39MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.06%               59.55MiB / 975.7MiB   6.10%               1.39MB / 554kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.09%               48.27MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           7.12%               267MiB / 975.7MiB     27.36%              3.47MB / 360kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.10%               29.02MiB / 975.7MiB   2.97%               2.65MB / 1.71MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.37%               22.59MiB / 975.7MiB   2.32%               414kB / 405kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.25%               52.3MiB / 975.7MiB    5.36%               4.36MB / 1.4MB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.07%               59.55MiB / 975.7MiB   6.10%               1.39MB / 554kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.02%               48.27MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           6.02%               267MiB / 975.7MiB     27.36%              3.47MB / 361kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.59%               29.02MiB / 975.7MiB   2.97%               2.65MB / 1.72MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.38%               22.59MiB / 975.7MiB   2.32%               414kB / 405kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          2.92%               52.3MiB / 975.7MiB    5.36%               4.38MB / 1.4MB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          0.99%               59.55MiB / 975.7MiB   6.10%               1.39MB / 554kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.01%               48.27MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           6.84%               267MiB / 975.7MiB     27.36%              3.47MB / 361kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.08%               29.02MiB / 975.7MiB   2.97%               2.66MB / 1.72MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.41%               22.59MiB / 975.7MiB   2.32%               414kB / 406kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.07%               52.3MiB / 975.7MiB    5.36%               4.4MB / 1.4MB       49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          0.99%               59.55MiB / 975.7MiB   6.10%               1.39MB / 554kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.02%               48.27MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           6.51%               267MiB / 975.7MiB     27.36%              3.48MB / 362kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.68%               29.02MiB / 975.7MiB   2.97%               2.66MB / 1.72MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.36%               22.59MiB / 975.7MiB   2.32%               414kB / 406kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.00%               52.3MiB / 975.7MiB    5.36%               4.42MB / 1.4MB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          0.94%               59.55MiB / 975.7MiB   6.10%               1.39MB / 554kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.02%               48.27MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           7.12%               267MiB / 975.7MiB     27.36%              3.48MB / 363kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.97%               29.02MiB / 975.7MiB   2.97%               2.66MB / 1.72MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.57%               22.59MiB / 975.7MiB   2.32%               414kB / 406kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.00%               52.3MiB / 975.7MiB    5.36%               4.43MB / 1.41MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.00%               59.55MiB / 975.7MiB   6.10%               1.39MB / 554kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.02%               48.27MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           6.15%               267MiB / 975.7MiB     27.36%              3.48MB / 363kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.91%               29.02MiB / 975.7MiB   2.97%               2.67MB / 1.73MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.34%               22.59MiB / 975.7MiB   2.32%               414kB / 406kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          2.78%               52.3MiB / 975.7MiB    5.36%               4.45MB / 1.41MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          0.98%               59.55MiB / 975.7MiB   6.10%               1.39MB / 554kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.02%               48.27MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           6.42%               267MiB / 975.7MiB     27.36%              3.48MB / 364kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.97%               29.02MiB / 975.7MiB   2.97%               2.67MB / 1.73MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.36%               22.59MiB / 975.7MiB   2.32%               414kB / 406kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.22%               52.3MiB / 975.7MiB    5.36%               4.47MB / 1.41MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.04%               59.55MiB / 975.7MiB   6.10%               1.39MB / 554kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.02%               48.27MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           6.07%               267MiB / 975.7MiB     27.36%              3.48MB / 365kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.76%               29.02MiB / 975.7MiB   2.97%               2.67MB / 1.73MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.36%               22.59MiB / 975.7MiB   2.32%               414kB / 406kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.02%               52.3MiB / 975.7MiB    5.36%               4.49MB / 1.42MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.06%               59.55MiB / 975.7MiB   6.10%               1.39MB / 554kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.02%               48.27MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           6.69%               267MiB / 975.7MiB     27.36%              3.48MB / 365kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.86%               29.02MiB / 975.7MiB   2.97%               2.68MB / 1.73MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.39%               22.59MiB / 975.7MiB   2.32%               414kB / 406kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          2.81%               52.3MiB / 975.7MiB    5.36%               4.5MB / 1.42MB      49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.01%               59.55MiB / 975.7MiB   6.10%               1.39MB / 554kB      41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.02%               48.27MiB / 975.7MiB   4.95%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           5.79%               267MiB / 975.7MiB     27.36%              3.48MB / 366kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        2.01%               29.02MiB / 975.7MiB   2.97%               2.68MB / 1.74MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.39%               22.59MiB / 975.7MiB   2.32%               414kB / 406kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.02%               52.3MiB / 975.7MiB    5.36%               4.52MB / 1.42MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.13%               59.55MiB / 975.7MiB   6.10%               1.4MB / 554kB       41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    10.55%              48.49MiB / 975.7MiB   4.97%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           5.83%               267MiB / 975.7MiB     27.37%              3.48MB / 367kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.83%               29.02MiB / 975.7MiB   2.97%               2.68MB / 1.74MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.38%               22.59MiB / 975.7MiB   2.32%               414kB / 406kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          2.90%               52.3MiB / 975.7MiB    5.36%               4.54MB / 1.42MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.09%               59.55MiB / 975.7MiB   6.10%               1.4MB / 554kB       41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.02%               48.42MiB / 975.7MiB   4.96%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           5.22%               267MiB / 975.7MiB     27.37%              3.49MB / 367kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.79%               29.02MiB / 975.7MiB   2.97%               2.68MB / 1.74MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.36%               22.59MiB / 975.7MiB   2.32%               414kB / 406kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.16%               52.3MiB / 975.7MiB    5.36%               4.56MB / 1.43MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.06%               59.55MiB / 975.7MiB   6.10%               1.4MB / 554kB       41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.02%               48.42MiB / 975.7MiB   4.96%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           4.40%               267MiB / 975.7MiB     27.37%              3.49MB / 367kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.64%               29.02MiB / 975.7MiB   2.97%               2.69MB / 1.74MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.36%               22.59MiB / 975.7MiB   2.32%               414kB / 406kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          3.13%               52.3MiB / 975.7MiB    5.36%               4.58MB / 1.43MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.03%               59.55MiB / 975.7MiB   6.10%               1.4MB / 554kB       41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.03%               48.42MiB / 975.7MiB   4.96%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           4.18%               267MiB / 975.7MiB     27.37%              3.49MB / 368kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.41%               29.02MiB / 975.7MiB   2.97%               2.69MB / 1.74MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.35%               22.59MiB / 975.7MiB   2.32%               415kB / 406kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          2.98%               52.3MiB / 975.7MiB    5.36%               4.59MB / 1.43MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          1.08%               59.55MiB / 975.7MiB   6.10%               1.4MB / 554kB       41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.07%               48.42MiB / 975.7MiB   4.96%               0B / 0B             125MB / 98.3kB      0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+294b6b2a1ca2        jason_5_1           3.91%               267MiB / 975.7MiB     27.37%              3.49MB / 368kB      142MB / 6.46MB      0
+40500eec6647        hwbridge_4_1        1.40%               29.02MiB / 975.7MiB   2.97%               2.69MB / 1.74MB     7.65MB / 475kB      0
+0efc26fa528a        comm_3_1            0.40%               22.59MiB / 975.7MiB   2.32%               415kB / 406kB       2.06MB / 0B         0
+9436368dd4fc        mavros_2_1          2.62%               52.3MiB / 975.7MiB    5.36%               4.61MB / 1.43MB     49.2kB / 0B         0
+6de5cd5c81e8        master_1_1          0.98%               59.55MiB / 975.7MiB   6.10%               1.4MB / 554kB       41.8MB / 8.19kB     0
+d1de42f0a768        resin_supervisor    0.02%               48.42MiB / 975.7MiB   4.96%               0B / 0B             125MB / 98.3kB      0
