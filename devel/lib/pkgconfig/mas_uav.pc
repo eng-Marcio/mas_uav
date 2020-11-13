@@ -1,8 +1,0 @@
-prefix=/home/richardbarbosa/jason_ros_ws/devel
-
-Name: mas_uav
-Description: Description of mas_uav
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

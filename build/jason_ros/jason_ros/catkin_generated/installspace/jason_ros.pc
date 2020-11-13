@@ -1,8 +1,0 @@
-prefix=/home/richardbarbosa/jason_ros_ws/install
-
-Name: jason_ros
-Description: Description of jason_ros
-Version: 1.6.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
