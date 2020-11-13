@@ -1,6 +1,0 @@
-MAS uav_agents {
-
-    infrastructure: Centralised
-
-    agents: uav agentArchClass jasonros.RosArch;
-}
