@@ -1,5 +1,5 @@
 # MAS-UAV
-New Version of Multi agent system to coordinate multiple UAVs
+Multi agent system to coordinate multiple UAVs
 
 This repository was tested with ubuntu 18.04, ROS melodic and gazebo 9.
 ## Build
