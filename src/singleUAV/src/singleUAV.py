@@ -10,6 +10,7 @@ from Actions import Actions
 from Perceptions import Perceptions
 from Com_FMC import Com_FMC
 from SlamHandler import SlamHandler
+from Mapping_System import Mapping_System
 
 from threading import RLock
 
@@ -51,7 +52,8 @@ class Controler:
         self.perceptions = Perceptions(self) ##listeners to the perceptions coming from mav-ros
         self.comFMC = Com_FMC(self)          ##communication with the Fire Monitoring Center, represented by a human user in this system 
         self.slamHandler = SlamHandler(self) ##Map handler, slam-sensor topic listener, colision detection
-        
+        self.mapping_System = Mapping_System(self) ## Binds class responsible for making the flight plan and updating the map
+
         ##some important constants
         self.TAKEOFF_ALT_DEF = 7 ##default altitude to take off
         
@@ -84,6 +86,7 @@ class Controler:
         ##start ros instances on peripheral objects
         self.perceptions.start()
         self.actions.start()
+        self.mapping_System.start()
 
     def isAValidStateChange(self, state):
         if(state == self.S_Awaiting):
@@ -182,7 +185,7 @@ class Controler:
                     if(matchPositions(cur_pos, des, 0.25)):
                         if(self.trajPointer != (len(self.trajectory) - 1)):                      ## set setpoint to next coordinate on trajectory plan
                             self.trajPointer = self.trajPointer + 1
-                            self.actions.setPoint(self.trajectory[self.trajPointer][0], self.trajectory[self.trajPointer][1], self.trajectory[self.trajPointer][2])
+                            self.actions.SetPoint(self.trajectory[self.trajPointer][0], self.trajectory[self.trajPointer][1], self.trajectory[self.trajPointer][2])
 
             elif(self.currentState == self.S_TrackSmoke):     ##this is a ghost state for now
                 if(self.stateChanged):                    ##no setup needed
@@ -227,8 +230,7 @@ class Controler:
         ##for testing reasons we will calculate an interpolated number of points on an straight line to the destination
         pos = self.perceptions.getPos()
         dest = (self.actions.des.x, self.actions.des.y, self.actions.des.z)
-        self.trajectory = []
-        self.trajectory.append(dest)
+        self.trajectory = self.mapping_System.makeFlightPlan(pos,dest)##mapping_Sytem returns with the coordinates list 
         self.trajPointer = -1
         self.trajectoryState = self.T_Active
         return

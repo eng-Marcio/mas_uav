@@ -8,7 +8,10 @@ class Mapping_System:
     def _init_(self,controler):
         ##maintain pointer to controler
         self.controler = controler
-        self.map = []
+        
+
+    def start(self):##starts the operating variables
+        self.currentMap = []
 
     ## Mapping_System mathods
     def makeFlightPlan(self,corruntCoords,destCoords): ## tem que refazer,chamar a função recalcula rota
