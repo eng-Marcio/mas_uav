@@ -46,7 +46,7 @@ class Com_FMC:
             
             pos = self.controler.perceptions.position
             des = self.controler.actions.cur_dest
-            res = "currentState: {}; position -> lat: {}, long: {}, alt: {}, dest = {},{},{}".format(self.controler.currentState, pos.x, pos.y, pos.z, des.x, des.y, des.z)
+            res = "currentState: {} trajectoryState: {}; position -> lat: {}, long: {}, alt: {}, dest = {},{},{}".format(self.controler.currentState,self.controler.trajectoryState, pos.x, pos.y, pos.z, des.x, des.y, des.z)
             
             if("exit" in message):
                 self.socket.send(b"comand sent successfully.")
@@ -125,7 +125,3 @@ class FMClient:
 
 if __name__ == '__main__':
     FMClient()
-
-
-    
-    

@@ -58,4 +58,3 @@ class Actions:
         header = std_msgs.msg.Header()
         header.stamp = rospy.Time.now()
         self.setPoint_pub.publish(pose=pose, header=header)
-

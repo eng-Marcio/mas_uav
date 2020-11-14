@@ -180,9 +180,9 @@ class Controler:
                         self.actions.SetPoint((self.trajectory[0][0], self.trajectory[0][1], self.trajectory[0][2]))
                     des = self.trajectory[self.trajPointer]         ##get current destination on trajectory plan
                     if(matchPositions(cur_pos, des, 0.25)):
-                        if(self.trajPointer != (len(self.trajectory) - 1)):                      ## set setpoint to next coordinate on trajectory plan
+                        if(self.trajPointer != (len(self.trajectory) - 1)): ## set setpoint to next coordinate on trajectory plan
                             self.trajPointer = self.trajPointer + 1
-                            self.actions.setPoint(self.trajectory[self.trajPointer][0], self.trajectory[self.trajPointer][1], self.trajectory[self.trajPointer][2])
+                            self.actions.SetPoint(self.trajectory[self.trajPointer][0], self.trajectory[self.trajPointer][1], self.trajectory[self.trajPointer][2])
 
             elif(self.currentState == self.S_TrackSmoke):     ##this is a ghost state for now
                 if(self.stateChanged):                    ##no setup needed
