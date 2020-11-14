@@ -18,6 +18,7 @@ class Actions:
 
 
     ##methods: services
+    ##small change
     def start(self):
         ##setting up action topics to publish
         self.setPoint_pub = rospy.Publisher('mavros/setpoint_position/local', geometry_msgs.msg.PoseStamped, queue_size=1, latch=True)
