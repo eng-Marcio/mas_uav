@@ -8,18 +8,18 @@ class Mapping_System:
     def _init_(self,controler):
         ##maintain pointer to controler
         self.controler = controler
-        salf.map = [][]
+        self.map = []
 
     ## Mapping_System mathods
     def makeFlightPlan(self,corruntCoords,destCoords): ## tem que refazer,chamar a função recalcula rota
-        ArrayPlan = findPathByAStar(corruntCoords,destCoords)
+        #ArrayPlan = findPathByAStar(corruntCoords,destCoords)
         ArrayPlan = [(1.0,1.0,1.0),(1.0,1.0,1.0),(1.0,1.0,1.0)]## só um exemplo
         return ArrayPlan
 
     def findPathByAStar(self,corruntCoords,destCoords):## tem que refazer,função A*
         return 0
     
-    def optimizesFlightPlanArray(self.InputArray):## this function removes coordinates from the middle of a line (useless coordinates)
+    def optimizesFlightPlanArray(self,ArrayPlan):## this function removes coordinates from the middle of a line (useless coordinates)
         ##não ta pronta
         return 0
     
