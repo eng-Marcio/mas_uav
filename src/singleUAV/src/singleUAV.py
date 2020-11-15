@@ -276,11 +276,17 @@ def main():
     controler = Controler()
     controler.mapping_System.start()
     print(controler.mapping_System.map)
-    #start ros
-    #controler.start()
-    #controler.controlState() ##start controlling system
-
+    print("#############################################")
+    print(controler.mapping_System.matrixToGPS(10, 10))
+    print(controler.mapping_System.matrixToGPS(60, 60))
+    print(controler.mapping_System.GPSToMatrix(-2, -4))
+    print(controler.mapping_System.GPSToMatrix(21.35, 23.8))
     return
+    
+    #start ros
+    controler.start()
+    controler.controlState() ##start controlling system
+
 
     ###comandos concentrados para iniciar o ros e os topicos necessarios
     while(not controler.perceptions.getState().guided):

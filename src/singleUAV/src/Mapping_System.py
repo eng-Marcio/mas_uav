@@ -8,17 +8,30 @@ class Mapping_System(SearchProblem):
     def __init__(self,controler):
         ##maintain pointer to controler
         self.controler = controler
-        self.pathFinder = SearchProblem(self)
-        self.map = self.buildMap(30, 30, 0.3)
-        
+        #self.pathFinder = SearchProblem(self)
+        self.map = self.buildMap(60, 60, 0.3)
+
+        self.offsetX = -10     #
+        self.offsetY = -10     # constants to convert matrix to gps
+        self.resolution = 0.5  #
+
+    def matrixToGPS(self, xMat, yMat):
+        xgps = (xMat + self.offsetX)*self.resolution
+        ygps = (yMat + self.offsetY)*self.resolution 
+        return [xgps, ygps]
+    
+    def GPSToMatrix(self, xGPS, yGPS):
+        xMat = round(xGPS/self.resolution) - self.offsetX
+        yMat = round(yGPS/self.resolution) - self.offsetY
+        return [xMat, yMat]
 
     def start(self):##starts the operating variables
-        self.cur_pos = [1, 1]
-        self.goal = [28, 28]
+        self.cur_pos = [10, 10]
+        self.goal = [50, 50]
         self.map[1][1] = 0
         self.map[28][28] = 0  #guarantee that origin and destination are reachable
-        path = uniformCostSearch(self.pathFinder)
-        print path
+        #path = uniformCostSearch(self.pathFinder)
+        #print path
 
 
     ## Mapping_System mathods
@@ -34,7 +47,7 @@ class Mapping_System(SearchProblem):
         ##não ta pronta
         return 0
     
-    #build a map 40mx40m: 50cm resolution >>array 80x80
+    #build a map 30mx30m: 50cm resolution >>array 60x60
     def buildMap(self, sizeX, sizeY, qtd_obs):
         arr = []
         for i in range(sizeX):
