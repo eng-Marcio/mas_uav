@@ -18,7 +18,7 @@ class Com_FMC:
         ##initialize communication server
         self.thread = Thread(target=self.listenSocket)
         self.terminate = False
-        self.thread.start()
+        #self.thread.start()
 
     def listenSocket(self):
         print("server started")

@@ -274,10 +274,11 @@ def main():
     #new code for initialization
     print("Starting python node.")
     controler = Controler()
-    
+    controler.mapping_System.start()
+    print(controler.mapping_System.map)
     #start ros
-    controler.start()
-    controler.controlState() ##start controlling system
+    #controler.start()
+    #controler.controlState() ##start controlling system
 
     return
 

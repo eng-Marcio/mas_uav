@@ -1,17 +1,16 @@
 #!/usr/bin/env python2
-import rospy
-import std_msgs.msg 
-
+# -*- coding: utf-8 -*-
+import random
 
 class Mapping_System:
 
-    def _init_(self,controler):
+    def __init__(self,controler):
         ##maintain pointer to controler
         self.controler = controler
         
 
     def start(self):##starts the operating variables
-        self.currentMap = []
+        self.map = self.buildMap(30, 30, 0.3)
 
     ## Mapping_System mathods
     def makeFlightPlan(self,corruntCoords,destCoords): ## tem que refazer,chamar a função recalcula rota
@@ -26,3 +25,19 @@ class Mapping_System:
         ##não ta pronta
         return 0
     
+    #build a map 40mx40m: 50cm resolution >>array 80x80
+    def buildMap(self, sizeX, sizeY, qtd_obs):
+        arr = []
+        for i in range(sizeX):
+            line = []
+            for j in range(sizeY):
+                if((j == 0) or (j == (sizeY-1)) or (i==0) or (i == (sizeX-1))): #limits of the map are the walls
+                    line.append(1)
+                else:
+                    if(random.random() < qtd_obs):
+                        line.append(1)
+                    else:
+                        line.append(0)
+            arr.append(line)
+
+        return arr
