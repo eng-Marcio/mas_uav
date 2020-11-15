@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 # search.py
 # ---------
 # Licensing Information:  You are free to use or extend these projects for
@@ -17,21 +19,26 @@ In search.py, you will implement generic search algorithms which are called by
 Pacman agents (in searchAgents.py).
 """
 
-import util
+
+#global action
+L = 'L'
+R = 'R'
+N = 'N'
+S = 'S'
 
 class SearchProblem:
-    """
-    This class outlines the structure of a search problem, but doesn't implement
-    any of the methods (in object-oriented terminology: an abstract class).
-
-    You do not need to change anything in this class, ever.
-    """
+    def __init__(self, map):
+        from Mapping_System import Mapping_System
+        self.map_System = map
 
     def getStartState(self):
         """
         Returns the start state for the search problem.
         """
-        util.raiseNotDefined()
+        return self.map_System.cur_pos
+
+    def EqualState(self, state1, state2):
+        return (state1[0] == state2[0]) and (state1[1] == state2[1])
 
     def isGoalState(self, state):
         """
@@ -39,7 +46,7 @@ class SearchProblem:
 
         Returns True if and only if the state is a valid goal state.
         """
-        util.raiseNotDefined()
+        return self.EqualState(state, self.map_System.goal)
 
     def getSuccessors(self, state):
         """
@@ -50,7 +57,21 @@ class SearchProblem:
         state, 'action' is the action required to get there, and 'stepCost' is
         the incremental cost of expanding to that successor.
         """
-        util.raiseNotDefined()
+        successors = []
+        x, y = state  #split state coordinates
+        #check Left
+        if(self.map_System.map[x-1][y] == 0):
+            successors.append([[x-1, y], L, 1])
+        #check Right
+        if(self.map_System.map[x+1][y] == 0):
+            successors.append([[x+1, y], R, 1])
+        #check North
+        if(self.map_System.map[x][y+1] == 0):
+            successors.append([[x, y+1], N, 1])
+        #check South
+        if(self.map_System.map[x][y-1] == 0):
+            successors.append([[x, y-1], S, 1])
+        return successors
 
     def getCostOfActions(self, actions):
         """
@@ -59,7 +80,7 @@ class SearchProblem:
         This method returns the total cost of a particular sequence of actions.
         The sequence must be composed of legal moves.
         """
-        util.raiseNotDefined()
+        return len(actions) ##cost is simply the number of steps
 
 
 def tinyMazeSearch(problem):
@@ -105,8 +126,7 @@ def depthFirstSearch(problem):
     ## Estados: Posição do Pacman 
     ## Transições: Movimentos permitidos
     ## Euristica: aqui? nenhuma
-
-    current_state = Node(problem, problem.getStartState(), [])
+    Node(problem, problem.getStartState(), [])
     unvisited_states = [current_state]
     visited_states = []
     while not problem.isGoalState(current_state.state):
@@ -125,7 +145,6 @@ def depthFirstSearch(problem):
     # print("A sequencia de movimentos encontrada foi: ", current_state.action_list)
     return current_state.action_list
 
-    #util.raiseNotDefined()
 
 def breadthFirstSearch(problem):
     """Search the shallowest nodes in the search tree first."""
@@ -210,7 +229,7 @@ class AstarNode:
     def __init__(self, problem, state, action_list, acc_cost, step_cost, heuristic):
         self.state = state
         self.action_list = action_list
-        self.acc_cost = acc_cost + step_cost + heuristic(state)
+        self.acc_cost = acc_cost + step_cost + 0 #heuristic(state)
 
 def _heuristicInsert(array, to_insert):
     """
@@ -248,47 +267,24 @@ def aStarSearch(problem, heuristic=nullHeuristic):
     "python pacman.py -l bigMaze -z .5 -p SearchAgent -a fn=astar,heuristic=manhattanHeuristic"
     "python pacman.py -l bigMaze -z .5 -p SearchAgent -a fn=astar,heuristic=euclideanHeuristic"
 
-    current_state = Node(problem, problem.getStartState(), [])
+    current_state = AstarNode(problem, problem.getStartState(), [], 0, 0, heuristic)
     unvisited_states = [current_state]
-<<<<<<< HEAD
-    while not problem.isGoalState(current_state.state):
-        for triplet in problem.getSuccessors(current_state.state):
-            state, action, action_cost = triplet
-            new_state = AstarNode(problem, state, \
-                current_state.action_list + [action],\
-                    current_state.acc_cost, action_cost, heuristic)
-            _heuristicInsert(unvisited_states, new_state)
-        unvisited_states.remove(current_state)
-        current_state = unvisited_states[0]
-        if unvisited_states == []:
-            print("fuck")
-            return []
-=======
     visited_states = []
     while not problem.isGoalState(current_state.state):
         # print("investigando estado ", current_state.state)
         for new_state in problem.getSuccessors(current_state.state):
             state, action, action_cost = new_state
             if state not in visited_states: # poda de estados já visitados (pro Astar não é pertinente)
-                new_node = Node(problem, state, current_state.action_list + [action], current_state.path_cost + action_cost, heuristic(state, problem) )
+                new_node = AstarNode(problem, state, current_state.action_list + [action], current_state.acc_cost + action_cost, action_cost, heuristic(state, problem) )
                 unvisited_states.append(new_node) # (critico pro Astar)
         unvisited_states.remove(current_state)
         if unvisited_states is []:
             print("Objetivo não alcançado")
             return False
         visited_states.append(current_state.state)
-        current_state = sorted(unvisited_states, key=lambda unvisited_state: (unvisited_state.expected_cost))[0] 
+        current_state = sorted(unvisited_states, key=lambda unvisited_state: (unvisited_state.acc_cost))[0] 
         # ordena a lista 'unvisited_states' com base na propriedade 'path_cost'
-<<<<<<< HEAD
-        # extremamente elegante, extremamente ineficiente por causa de 'sort'
-    #print("A sequencia de movimentos encontrada foi: ", current_state.action_list)
-=======
-        # extremamente elegante, extremamente ineficiente
-    print("A sequencia de movimentos encontrada foi: ", current_state.action_list)
->>>>>>> f6dba8ed1ede954c923365cb09cb566e6825bb6a
->>>>>>> 67161847271e72a0a9ff89bffdef6296942a2376
     return current_state.action_list
-    util.raiseNotDefined()
 
 
 # Abbreviations

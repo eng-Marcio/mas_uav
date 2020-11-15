@@ -1,16 +1,25 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
+from search import SearchProblem
+from search import uniformCostSearch
 import random
 
-class Mapping_System:
-
+class Mapping_System(SearchProblem):
     def __init__(self,controler):
         ##maintain pointer to controler
         self.controler = controler
+        self.pathFinder = SearchProblem(self)
+        self.map = self.buildMap(30, 30, 0.3)
         
 
     def start(self):##starts the operating variables
-        self.map = self.buildMap(30, 30, 0.3)
+        self.cur_pos = [1, 1]
+        self.goal = [28, 28]
+        self.map[1][1] = 0
+        self.map[28][28] = 0  #guarantee that origin and destination are reachable
+        path = uniformCostSearch(self.pathFinder)
+        print path
+
 
     ## Mapping_System mathods
     def makeFlightPlan(self,corruntCoords,destCoords): ## tem que refazer,chamar a função recalcula rota
