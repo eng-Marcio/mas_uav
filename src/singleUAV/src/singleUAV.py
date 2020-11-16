@@ -228,36 +228,15 @@ class Controler:
         self.actions.TakeOff(self.TAKEOFF_ALT_DEF)
     
     def getTrajectory(self):
-        ##for testing reasons we will calculate an interpolated number of points on an straight line to the destination
-        pos = self.perceptions.getPos()
-        dest = (self.actions.des.x, self.actions.des.y, self.actions.des.z)
-        self.trajectory = self.mapping_System.makeFlightPlan(pos,dest)##mapping_Sytem returns with the coordinates list 
-        self.trajPointer = -1
-        self.trajectoryState = self.T_Active
+        traj = self.mapping_System.trajectoryService()
+        if(not traj): #traj is an empty list, no valid path found
+            self.trajectoryState = self.T_None
+        else:
+            ##everything done
+            self.trajPointer = -1
+            self.trajectoryState = self.T_Active
         return
         
-        #calculate vector pointing to destination with size 1
-        vector = (dest[0] - pos[0], dest[1] - pos[1], dest[2] - pos[2])
-        size_raw = sqrt(vector[0]**2 + vector[1]**2 + vector[2]**2)
-        if(size_raw > 10000): ##distance to destination is absurd, some error has happened
-            print("invalid destination provided")
-            self.trajectoryState = self.T_None
-            return
-        vector = (vector[0] / size_raw, vector[1] / size_raw, vector[2] / size_raw)  ##normalize vector
-        self.trajectory = []
-        ##set coordinate values for the trajectory
-        for i in range(int(size_raw)):
-            x = []
-            x.append(pos[0] + (i + 1) * vector[0])
-            x.append(pos[1] + (i + 1) * vector[1])
-            x.append(pos[2] + (i + 1) * vector[2])
-            self.trajectory.append(x)
-        self.trajectory.append(dest) ##last coordinate is the destination itself
-        
-        ##everything done
-        self.trajPointer = -1
-        self.trajectoryState = self.T_Active
-
 
 def matchPositions(pos1, pos2, tol):
     res = True
@@ -275,23 +254,18 @@ def main():
     #new code for initialization
     print("Starting python node.")
     controler = Controler()
-    controler.mapping_System.start()
-
     
-    controler.mapping_System.printMap()
+    # controler.mapping_System.start()
+    # controler.mapping_System.getFlightPlan()
+    # controler.mapping_System.printMap()
+    # print(controler.mapping_System.convertToCoord(controler.mapping_System.path))
     
-    print("#############################################")
-    ##print(controler.mapping_System.matrixToGPS(10, 10))
-    ##print(controler.mapping_System.matrixToGPS(60, 60))
-    ##print(controler.mapping_System.GPSToMatrix(-2, -4))
-    ##print(controler.mapping_System.GPSToMatrix(21.35, 23.8))
-   
-    return
     
     #start ros
     controler.start()
     controler.controlState() ##start controlling system
 
+    return
 
     ###comandos concentrados para iniciar o ros e os topicos necessarios
     while(not controler.perceptions.getState().guided):
