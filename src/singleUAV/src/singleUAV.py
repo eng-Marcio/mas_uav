@@ -278,7 +278,7 @@ def main():
     controler.mapping_System.start()
 
     
-    print(controler.mapping_System.map)
+    controler.mapping_System.printMap()
     
     print("#############################################")
     ##print(controler.mapping_System.matrixToGPS(10, 10))
