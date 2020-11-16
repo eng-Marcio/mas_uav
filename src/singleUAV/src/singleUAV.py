@@ -56,7 +56,7 @@ class Controler:
         self.mapping_System = Mapping_System(self) ## Binds class responsible for making the flight plan and updating the map
 
         ##some important constants
-        self.TAKEOFF_ALT_DEF = 7 ##default altitude to take off
+        self.TAKEOFF_ALT_DEF = 5.25 ##default altitude to take off
         
 
         ##start state machine
@@ -176,17 +176,17 @@ class Controler:
                 if(self.stateChanged):                    ##no setup needed
                     self.stateChanged = False
                 cur_pos = self.perceptions.getPos()
-                if((self.trajectoryState == self.T_None) or matchPositions(cur_pos, (self.actions.des.x, self.actions.des.y, self.actions.des.z), 0.5)): ##slam found an obstacle or destination reached
+                if((self.trajectoryState == self.T_None) or matchPositions(cur_pos, [self.actions.des.x, self.actions.des.y, self.actions.des.z], 0.5)): ##slam found an obstacle or destination reached
                     self.setState(self.S_HoldPos)
                 else:
                     if(self.trajPointer == -1):
                         self.trajPointer = self.trajPointer + 1
-                        self.actions.SetPoint((self.trajectory[0][0], self.trajectory[0][1], self.trajectory[0][2]))
+                        self.actions.SetPoint(self.trajectory[0])
                     des = self.trajectory[self.trajPointer]         ##get current destination on trajectory plan
-                    if(matchPositions(cur_pos, des, 0.25)):
+                    if(matchPositions(cur_pos, des, 0.5)):
                         if(self.trajPointer != (len(self.trajectory) - 1)):                      ## set setpoint to next coordinate on trajectory plan
                             self.trajPointer = self.trajPointer + 1
-                            self.actions.SetPoint(self.trajectory[self.trajPointer][0], self.trajectory[self.trajPointer][1], self.trajectory[self.trajPointer][2])
+                            self.actions.SetPoint(self.trajectory[self.trajPointer])
 
             elif(self.currentState == self.S_TrackSmoke):     ##this is a ghost state for now
                 if(self.stateChanged):                    ##no setup needed
@@ -239,6 +239,7 @@ class Controler:
             self.trajectoryState = self.T_None
         else:
             ##everything done
+            self.trajectory = traj
             self.trajPointer = -1
             self.trajectoryState = self.T_Active
         return
@@ -261,14 +262,11 @@ def main():
     #new code for initialization
     print("Starting python node.")
     controler = Controler()
-    controler.mapping_System.start()
+    controler.start()
+    controler.controlState() ##start controlling system
 
-    print(controler.mapping_System.map)
-    
-    print("#############################################")
-   
-    
-   
+    return
+
 
     controler.mapping_System.updateCurrentMap(0,0,0,controler.mapping_System.createForsedLidarArray())
 
@@ -277,19 +275,13 @@ def main():
     ##controler.mapping_System.update.updateCurrentMap()
     return
     #new code for initialization
-    print("Starting python node.")
-    controler = Controler()
-    
+    # print("Starting python node.")
+    # controler = Controler()
     # controler.mapping_System.start()
     # controler.mapping_System.getFlightPlan()
     # controler.mapping_System.printMap()
     # print(controler.mapping_System.convertToCoord(controler.mapping_System.path))
     
-    
-    #start ros
-    controler.start()
-    controler.controlState() ##start controlling system
-
     return
 
     ###comandos concentrados para iniciar o ros e os topicos necessarios

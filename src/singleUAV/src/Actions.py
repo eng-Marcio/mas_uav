@@ -12,7 +12,7 @@ class Actions:
         
         ##maintain pointer to controler
         self.controler = controler
-        self.des = geometry_msgs.msg.Point() ##setpoint current destination
+        self.des = geometry_msgs.msg.Point() ##setpoint final destination
         self.cur_dest = geometry_msgs.msg.Point() ##current position on setpoint
 
 

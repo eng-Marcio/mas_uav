@@ -27,7 +27,7 @@ class Mapping_System(SearchProblem):
     def start(self):##starts the operating variables
         self.pathFinder = SearchProblem(self)
         #build a map 30mx30m: 25cm resolution >>array 120x120 with obstacles
-        self.map = self.buildMap(120, 120, 0) 
+        self.map = self.buildMap(120, 120, 0.03) 
 
     def trajectoryService(self):
         curr = self.controler.perceptions.getPos()
@@ -44,12 +44,11 @@ class Mapping_System(SearchProblem):
         # self.map[10][10] = 0
         # self.map[100][100] = 0  #guarantee that origin and destination are reachable
         self.path = aStarSearch(self.pathFinder)
-        print(self.path)
         return self.path
 
     def convertToCoord(self,pathCommands):## this function removes coordinates from the middle of a line and build diagonal paths(useless coordinates)
         ##get start destination from current positions, z does not change
-        z = self.controler.perceptions.getPos()[2]
+        z = self.controler.actions.des.z
         x, y = self.matrixToGPS(self.cur_pos[0], self.cur_pos[1])
         angle = -1
         res = []
@@ -77,8 +76,6 @@ class Mapping_System(SearchProblem):
             res.append([x,y,z,newAngle])
             angle = newAngle
             i = i+1
-        ##at last, append last destination
-        #res.append[]
         return res
     
     def deltaDist(self, com):

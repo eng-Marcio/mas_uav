@@ -44,9 +44,9 @@ class Com_FMC:
             
             ###  Send reply back to client
             
-            pos = self.controler.perceptions.position
+            pos = self.controler.perceptions.getPos()
             des = self.controler.actions.cur_dest
-            res = "currentState: {}; position -> lat: {}, long: {}, alt: {}, dest = {},{},{}".format(self.controler.currentState, pos.x, pos.y, pos.z, des.x, des.y, des.z)
+            res = "currentState: {}; position -> lat: {}, long: {}, alt: {}, dest = {},{},{}".format(self.controler.currentState, pos[0], pos[1], pos[2], des.x, des.y, des.z)
             
             if("exit" in message):
                 self.socket.send(b"comand sent successfully.")
