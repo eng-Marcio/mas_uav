@@ -27,7 +27,7 @@ class Mapping_System(SearchProblem):
     def start(self):##starts the operating variables
         self.pathFinder = SearchProblem(self)
         #build a map 30mx30m: 25cm resolution >>array 120x120 with obstacles
-        self.map = self.buildMap(120, 120, 0.05) 
+        self.map = self.buildMap(120, 120, 0) 
 
     def trajectoryService(self):
         curr = self.controler.perceptions.getPos()
@@ -156,4 +156,35 @@ class Mapping_System(SearchProblem):
                 print("PosObstMatrix x e y",int(PosObstMatrix[0]),int(PosObstMatrix[1]))
                 self.map[int(PosObstMatrix[0])][int(PosObstMatrix[1])]=1## update the map
            
+        
             angleInArray +=1
+        PosUAVMatrix = self.GPSToMatrix(posXUAVGPS,posYUAVGPS)
+        self.map[int(PosUAVMatrix[0])][int(PosUAVMatrix[1])]= 8 ## update the map with drone position
+    
+    def updateCurrentMapInterface(self):## this function updates the txt file used as an interface to monitor the development of the map
+        fileText = open("CurrentMap.txt","w")## clean what has in this file
+        fileText.close()
+
+        lines = list()
+        fileText = open("CurrentMap.txt","a")
+        j=0
+        while (j<120):
+            var = self.map[j]
+            lines.append('{} --> {}\n'.format(var,j))## add map line in the list
+            j+=1
+        fileText.writelines(lines)
+        fileText.close()
+        
+        return 
+
+    def createForsedLidarArray(self,range = 270, max = 5):##create a signal similar to the one that would come from dealing, function for testing
+        i=0
+        arrayLidar = []
+        while(i<range):
+            
+            if (i>135 and i<180):
+                arrayLidar.append(1)
+            else:
+                arrayLidar.append(1)
+            i+=1
+        return arrayLidar

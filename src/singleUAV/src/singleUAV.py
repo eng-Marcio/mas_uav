@@ -229,6 +229,12 @@ class Controler:
     
     def getTrajectory(self):
         traj = self.mapping_System.trajectoryService()
+        goal = self.mapping_System.goal
+        rospy.loginfo("goal !!!!!!!!!!!!!!!!")
+        rospy.loginfo(goal)
+        rospy.loginfo("Get trajectory !!!!!!!!!!!!!!!!")
+        rospy.loginfo(traj)
+
         if(not traj): #traj is an empty list, no valid path found
             self.trajectoryState = self.T_None
         else:
@@ -251,6 +257,25 @@ def matchPositions(pos1, pos2, tol):
 import sensor_msgs.msg
 
 def main():
+
+    #new code for initialization
+    print("Starting python node.")
+    controler = Controler()
+    controler.mapping_System.start()
+
+    print(controler.mapping_System.map)
+    
+    print("#############################################")
+   
+    
+   
+
+    controler.mapping_System.updateCurrentMap(0,0,0,controler.mapping_System.createForsedLidarArray())
+
+    controler.mapping_System.updateCurrentMapInterface()
+    print("experimento terminou")
+    ##controler.mapping_System.update.updateCurrentMap()
+    return
     #new code for initialization
     print("Starting python node.")
     controler = Controler()
