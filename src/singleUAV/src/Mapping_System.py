@@ -3,6 +3,7 @@
 from search import SearchProblem
 from search import aStarSearch
 import random
+import math
 
 class Mapping_System(SearchProblem):
     def __init__(self,controler):
@@ -95,3 +96,21 @@ class Mapping_System(SearchProblem):
                 elif(mapp[x][limit - y - 1] == 3): #colision
                     string = string + "x"
             print(string)
+
+    def updateCurrentMap(self,posXUAVGPS,posYUAVGPS,AngleUAVGPS,inputLidarArray):
+        angleInArray = 0 ## 0 - 270
+        print("inici update Map")
+
+        while(angleInArray<len(inputLidarArray)):
+            if (inputLidarArray[angleInArray]>0.5):
+                totalAngle = (((angleInArray-45)+AngleUAVGPS)*math.pi)/(180)## angleInArray em graus, AngleUAV graus tbms. angleInArray-45 parar desconsiderar o inicio da varredura anti-horaria
+                PosXObstToUAVGPS = math.cos(totalAngle)*inputLidarArray[angleInArray]
+                PosYObstToUAVGPS = math.sin(totalAngle)*inputLidarArray[angleInArray]
+                PosXObstGPS = posXUAVGPS+PosXObstToUAVGPS
+                PosYObstGPS = posYUAVGPS+PosYObstToUAVGPS
+
+                PosObstMatrix = self.GPSToMatrix(PosXObstGPS,PosYObstGPS)
+                print("PosObstMatrix x e y",int(PosObstMatrix[0]),int(PosObstMatrix[1]))
+                self.map[int(PosObstMatrix[0])][int(PosObstMatrix[1])]=1## update the map
+           
+            angleInArray +=1
