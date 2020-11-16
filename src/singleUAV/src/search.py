@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # search.py
 # ---------
 # Licensing Information:  You are free to use or extend these projects for
@@ -16,22 +17,28 @@
 In search.py, you will implement generic search algorithms which are called by
 Pacman agents (in searchAgents.py).
 """
-
-import util
-
+#global action
+L = 'L'
+R = 'R'
+N = 'N'
+S = 'S'
 class SearchProblem:
     """
     This class outlines the structure of a search problem, but doesn't implement
     any of the methods (in object-oriented terminology: an abstract class).
-
-    You do not need to change anything in this class, ever.
     """
+    def __init__(self, map):
+        from Mapping_System import Mapping_System
+        self.map_System = map
 
     def getStartState(self):
         """
         Returns the start state for the search problem.
         """
-        util.raiseNotDefined()
+        return self.map_System.cur_pos
+
+    def EqualState(self, state1, state2):
+        return (state1[0] == state2[0]) and (state1[1] == state2[1])
 
     def isGoalState(self, state):
         """
@@ -39,7 +46,7 @@ class SearchProblem:
 
         Returns True if and only if the state is a valid goal state.
         """
-        util.raiseNotDefined()
+        return self.EqualState(state, self.map_System.goal)
 
     def getSuccessors(self, state):
         """
@@ -50,7 +57,21 @@ class SearchProblem:
         state, 'action' is the action required to get there, and 'stepCost' is
         the incremental cost of expanding to that successor.
         """
-        util.raiseNotDefined()
+        successors = []
+        x, y = state  #split state coordinates
+        #check Left
+        if(self.map_System.map[x-1][y] == 0):
+            successors.append([[x-1, y], L, 1])
+        #check Right
+        if(self.map_System.map[x+1][y] == 0):
+            successors.append([[x+1, y], R, 1])
+        #check North
+        if(self.map_System.map[x][y+1] == 0):
+            successors.append([[x, y+1], N, 1])
+        #check South
+        if(self.map_System.map[x][y-1] == 0):
+            successors.append([[x, y-1], S, 1])
+        return successors
 
     def getCostOfActions(self, actions):
         """
@@ -59,7 +80,7 @@ class SearchProblem:
         This method returns the total cost of a particular sequence of actions.
         The sequence must be composed of legal moves.
         """
-        util.raiseNotDefined()
+        return len(actions) ##cost is simply the number of steps
 
 
 def tinyMazeSearch(problem):

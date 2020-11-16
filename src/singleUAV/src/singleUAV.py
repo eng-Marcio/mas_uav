@@ -275,14 +275,10 @@ def main():
     print("Starting python node.")
     controler = Controler()
     controler.mapping_System.start()
-    print(controler.mapping_System.map)
-    print("#############################################")
-    print(controler.mapping_System.matrixToGPS(10, 10))
-    print(controler.mapping_System.matrixToGPS(60, 60))
-    print(controler.mapping_System.GPSToMatrix(-2, -4))
-    print(controler.mapping_System.GPSToMatrix(21.35, 23.8))
-    return
     
+    controler.mapping_System.printMap()
+        
+    return
     #start ros
     controler.start()
     controler.controlState() ##start controlling system

@@ -1,14 +1,14 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 from search import SearchProblem
-from search import uniformCostSearch
+from search import aStarSearch
 import random
 
 class Mapping_System(SearchProblem):
     def __init__(self,controler):
         ##maintain pointer to controler
         self.controler = controler
-        #self.pathFinder = SearchProblem(self)
+        self.pathFinder = SearchProblem(self)
         self.map = self.buildMap(60, 60, 0.3)
 
         self.offsetX = -10     #
@@ -27,11 +27,11 @@ class Mapping_System(SearchProblem):
 
     def start(self):##starts the operating variables
         self.cur_pos = [10, 10]
-        self.goal = [50, 50]
-        self.map[1][1] = 0
-        self.map[28][28] = 0  #guarantee that origin and destination are reachable
-        #path = uniformCostSearch(self.pathFinder)
-        #print path
+        self.goal = [55, 55]
+        self.map[10][10] = 0
+        self.map[55][55] = 0  #guarantee that origin and destination are reachable
+        self.path = aStarSearch(self.pathFinder)
+        print(self.path)
 
 
     ## Mapping_System mathods
@@ -63,3 +63,35 @@ class Mapping_System(SearchProblem):
             arr.append(line)
 
         return arr
+    
+    def printMap(self):
+        mapp = self.map
+        ##add the path
+        x, y = self.cur_pos
+        for i in self.path:
+            if i=='L':
+                x = x-1
+            elif i=='R':
+                x = x+1
+            elif i=='N':
+                y = y+1
+            elif i=='S':
+                y = y-1
+            if(mapp[x][y] == 0):
+                mapp[x][y] = 2
+            else:
+                mapp[x][y] = 3
+            
+        limit = len(mapp[0])
+        for y in range(len(mapp[0])):
+            string = ""
+            for x in range(len(mapp)):
+                if(mapp[x][limit - y - 1] == 0): #no obstacle
+                    string = string + "-"
+                elif(mapp[x][limit - y - 1] == 1): #obstacle
+                    string = string + "#"
+                elif(mapp[x][limit - y - 1] == 2): #path
+                    string = string + "o"
+                elif(mapp[x][limit - y - 1] == 3): #colision
+                    string = string + "x"
+            print(string)
