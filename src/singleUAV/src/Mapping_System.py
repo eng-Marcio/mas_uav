@@ -9,11 +9,11 @@ class Mapping_System(SearchProblem):
         ##maintain pointer to controler
         self.controler = controler
         self.pathFinder = SearchProblem(self)
-        self.map = self.buildMap(60, 60, 0.3)
+        self.map = self.buildMap(120, 120, 0.05)
 
         self.offsetX = -10     #
         self.offsetY = -10     # constants to convert matrix to gps
-        self.resolution = 0.5  #
+        self.resolution = 0.25  #
 
     def matrixToGPS(self, xMat, yMat):
         xgps = (xMat + self.offsetX)*self.resolution
@@ -27,9 +27,9 @@ class Mapping_System(SearchProblem):
 
     def start(self):##starts the operating variables
         self.cur_pos = [10, 10]
-        self.goal = [55, 55]
+        self.goal = [100, 100]
         self.map[10][10] = 0
-        self.map[55][55] = 0  #guarantee that origin and destination are reachable
+        self.map[100][100] = 0  #guarantee that origin and destination are reachable
         self.path = aStarSearch(self.pathFinder)
         print(self.path)
 
@@ -47,7 +47,7 @@ class Mapping_System(SearchProblem):
         ##não ta pronta
         return 0
     
-    #build a map 30mx30m: 50cm resolution >>array 60x60
+    #build a map 30mx30m: 25cm resolution >>array 120x120
     def buildMap(self, sizeX, sizeY, qtd_obs):
         arr = []
         for i in range(sizeX):

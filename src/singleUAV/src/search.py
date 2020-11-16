@@ -60,18 +60,33 @@ class SearchProblem:
         successors = []
         x, y = state  #split state coordinates
         #check Left
-        if(self.map_System.map[x-1][y] == 0):
+        if(self.space9free(x-1, y)):
             successors.append([[x-1, y], L, 1])
         #check Right
-        if(self.map_System.map[x+1][y] == 0):
+        if(self.space9free(x+1, y)):
             successors.append([[x+1, y], R, 1])
         #check North
-        if(self.map_System.map[x][y+1] == 0):
+        if(self.space9free(x, y+1)):
             successors.append([[x, y+1], N, 1])
         #check South
-        if(self.map_System.map[x][y-1] == 0):
+        if(self.space9free(x, y-1)):
             successors.append([[x, y-1], S, 1])
         return successors
+
+    def space9free(self, x, y): #return true if and only if all 9 grid spaces centered in x,y are free
+        res = True
+        res = res and self.map_System.map[x-1][y-1] == 0
+        res = res and self.map_System.map[x][y-1] == 0
+        res = res and self.map_System.map[x+1][y-1] == 0
+        res = res and self.map_System.map[x-1][y] == 0
+        res = res and self.map_System.map[x][y] == 0
+        res = res and self.map_System.map[x+1][y] == 0
+        res = res and self.map_System.map[x-1][y+1] == 0
+        res = res and self.map_System.map[x][y+1] == 0
+        res = res and self.map_System.map[x+1][y+1] == 0
+        return res
+        
+
 
     def getCostOfActions(self, actions):
         """
