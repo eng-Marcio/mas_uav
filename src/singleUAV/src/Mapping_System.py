@@ -27,7 +27,7 @@ class Mapping_System(SearchProblem):
     def start(self):##starts the operating variables
         self.pathFinder = SearchProblem(self)
         #build a map 30mx30m: 25cm resolution >>array 120x120 with obstacles
-        self.map = self.buildMap(120, 120, 0.03) 
+        self.map = self.buildMap(120, 120, 0) 
 
     def trajectoryService(self):
         curr = self.controler.perceptions.getPos()
@@ -137,7 +137,7 @@ class Mapping_System(SearchProblem):
                     string = string + "x"
             print(string)
 
-    def updateCurrentMap(self,posXUAVGPS,posYUAVGPS,AngleUAVGPS,inputLidarArray):
+    def updateCurrentMap(self,posXUAVGPS,posYUAVGPS,AngleUAVGPS,inputLidarArray=0):
         angleInArray = 0 ## 0 - 270
         print("inici update Map")
 
@@ -157,6 +157,7 @@ class Mapping_System(SearchProblem):
             angleInArray +=1
         PosUAVMatrix = self.GPSToMatrix(posXUAVGPS,posYUAVGPS)
         self.map[int(PosUAVMatrix[0])][int(PosUAVMatrix[1])]= 8 ## update the map with drone position
+
     
     def updateCurrentMapInterface(self):## this function updates the txt file used as an interface to monitor the development of the map
         fileText = open("CurrentMap.txt","w")## clean what has in this file
@@ -173,6 +174,14 @@ class Mapping_System(SearchProblem):
         fileText.close()
         
         return 
+
+    def getCurrentMapString(self):
+        i=0
+        listMapLines = []
+        while (i<len(self.map)):
+            listMapLines.append(str(self.map[i]).strip('[]'))
+            i+=1
+        return '\n'.join(map(str,listMapLines))
 
     def createForsedLidarArray(self,range = 270, max = 5):##create a signal similar to the one that would come from dealing, function for testing
         i=0

@@ -15,6 +15,9 @@ class Com_FMC:
         self.socket = context.socket(zmq.REP)
         self.socket.bind("tcp://*:5515") ##comunication server with fmc stays opened in port 5515 of localhost
 
+        ##these is like a dictionary to better comprehend what's going on with the state os state machine
+        self.NameStateList = ["S_Awaiting","S_takeOff","S_HoldPos","S_RunTrajAlgo","S_Moving ","S_TrackSmoke ","S_InformFMC ","S_Landing ","S_InformAndWaitFMC","S_Fatal_Error "]
+
         ##initialize communication server
         self.thread = Thread(target=self.listenSocket)
         self.terminate = False
@@ -40,13 +43,19 @@ class Com_FMC:
                 suc = self.comandLand()
             elif("track" in message):
                 suc = self.comandTracking()
+            
 
             
             ###  Send reply back to client
             
             pos = self.controler.perceptions.getPos()
             des = self.controler.actions.cur_dest
-            res = "currentState: {}; position -> lat: {}, long: {}, alt: {}, dest = {},{},{}".format(self.controler.currentState, pos[0], pos[1], pos[2], des.x, des.y, des.z)
+            if("map" in message):##if the controller receives the map request
+                res = "CurrenMap \n"
+                res = res + self.controler.mapping_System.getCurrentMapString()##add the map string and the map itself
+                suc = True
+            else:
+                res = "currentState: {}; position -> lat: {}, long: {}, alt: {}, dest = {},{},{}".format(self.NameStateList[int(self.controler.currentState)], pos[0], pos[1], pos[2], des.x, des.y, des.z)
             
             if("exit" in message):
                 self.socket.send(b"comand sent successfully.")
@@ -105,6 +114,7 @@ class FMClient:
         self.socket = context.socket(zmq.REQ)
         self.socket.connect("tcp://localhost:5515")
 
+        
         ##start service
         self.clientTask()
 
@@ -118,10 +128,24 @@ class FMClient:
                 break
             
             res = self.socket.recv()
-
-            print(res)
+            if("CurrenMap" in res):
+                
+                self.updateCurrentMapInterface(res)
+            else:
+                print(res)
             
         print("client closed")
+
+   
+
+    def updateCurrentMapInterface(self,map):## this function updates the txt file used as an interface to monitor the development of the map
+        fileText = open("CurrentMap.txt","w")## clean what has in this file
+        fileText.close()
+
+        lines = map
+        fileText = open("CurrentMap.txt","a")
+        fileText.writelines(lines)
+        fileText.close()
 
 if __name__ == '__main__':
     FMClient()
