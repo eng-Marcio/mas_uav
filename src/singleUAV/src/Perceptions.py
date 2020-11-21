@@ -20,6 +20,7 @@ class Perceptions:
         ## important attributes
         self.state = mavros_msgs.msg.State()
         self.position = geometry_msgs.msg.Point()
+        self.orientation = [0, 0, 0] ##roll pitch yaw
         self.destination = geometry_msgs.msg.Point()
         self.fcuSpeed = 0   ##remember to use a topic which returns approximatelly the speed        
         
@@ -41,6 +42,12 @@ class Perceptions:
         pos = self.position
         self.posLock.release()
         return (pos.x, pos.y, pos.z)
+    
+    def getOrientation(self):
+        self.posLock.acquire()
+        pos = self.orientation
+        self.posLock.release()
+        return pos
 
     def getSpeed(self):
         self.velLock.acquire()
@@ -56,8 +63,12 @@ class Perceptions:
         rospy.Subscriber('mavros/global_position/gp_vel', geometry_msgs.msg.TwistStamped, self.speed_callback)
 
     def pos_callback(self, msg):
+        param = msg.pose.pose
+        quat = param.orientation
+        new_angles = self.quaternion_to_euler(quat.x, quat.y, quat.z, quat.w)
         self.posLock.acquire()
-        self.position = msg.pose.pose.position
+        self.position = param.position
+        self.orientation = new_angles
         self.posLock.release()
         
     def state_callback(self, msg):
@@ -72,3 +83,22 @@ class Perceptions:
         self.velLock.acquire()
         self.fcuSpeed = lin_vel
         self.velLock.release()
+
+
+    def quaternion_to_euler(self, x, y, z, w):
+
+        import math
+        t0 = +2.0 * (w * x + y * z)
+        t1 = +1.0 - 2.0 * (x * x + y * y)
+        roll = math.degrees(math.atan2(t0, t1))
+
+        t2 = +2.0 * (w * y - z * x)
+        t2 = +1.0 if t2 > +1.0 else t2
+        t2 = -1.0 if t2 < -1.0 else t2
+        pitch = math.degrees(math.asin(t2))
+
+        t3 = +2.0 * (w * z + x * y)
+        t4 = +1.0 - 2.0 * (y * y + z * z)
+        yaw = math.degrees(math.atan2(t3, t4))
+
+        return [roll, pitch, yaw]

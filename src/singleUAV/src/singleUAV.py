@@ -10,7 +10,6 @@ from math import ceil
 from Actions import Actions
 from Perceptions import Perceptions
 from Com_FMC import Com_FMC
-from SlamHandler import SlamHandler
 from Mapping_System import Mapping_System
 
 from threading import RLock
@@ -52,7 +51,6 @@ class Controler:
         self.actions = Actions(self)         ##routines to publish actions to mavros
         self.perceptions = Perceptions(self) ##listeners to the perceptions coming from mav-ros
         self.comFMC = Com_FMC(self)          ##communication with the Fire Monitoring Center, represented by a human user in this system 
-        self.slamHandler = SlamHandler(self) ##Map handler, slam-sensor topic listener, colision detection
         self.mapping_System = Mapping_System(self) ## Binds class responsible for making the flight plan and updating the map
 
         ##some important constants
@@ -273,15 +271,6 @@ def main():
     controler.mapping_System.updateCurrentMapInterface()
     print("experimento terminou")
     ##controler.mapping_System.update.updateCurrentMap()
-    return
-    #new code for initialization
-    # print("Starting python node.")
-    # controler = Controler()
-    # controler.mapping_System.start()
-    # controler.mapping_System.getFlightPlan()
-    # controler.mapping_System.printMap()
-    # print(controler.mapping_System.convertToCoord(controler.mapping_System.path))
-    
     return
 
 if __name__ == '__main__':
