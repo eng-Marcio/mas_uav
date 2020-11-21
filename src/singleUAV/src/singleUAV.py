@@ -284,34 +284,5 @@ def main():
     
     return
 
-    ###comandos concentrados para iniciar o ros e os topicos necessarios
-    while(not controler.perceptions.getState().guided):
-        controler.actions.setMode('GUIDED')
-        controler.setupRate.sleep()
-    
-    while(not controler.perceptions.getState().armed):
-        controler.actions.ArmMotors(True)
-        controler.setupRate.sleep()
-
-    to_alt = 7
-    controler.actions.TakeOff(to_alt)
-    while(not matchPositions((0, 0, to_alt),(0, 0, controler.perceptions.getPos()[2]), 0.5)):
-        controler.operRate.sleep()
-
-    controler.actions.SetPoint((25,30,5))
-    while(not matchPositions((25,30,5),controler.perceptions.getPos(), 1.0)):
-        controler.operRate.sleep()
-
-    controler.actions.SetPoint((0,0,3))
-    while(not matchPositions((0,0,3),controler.perceptions.getPos(), 1.0)):
-        controler.operRate.sleep()
-
-
-    controler.actions.Land()
-    while(controler.perceptions.getState().armed):
-        controler.operRate.sleep()
-    
-    return
-
 if __name__ == '__main__':
     main()

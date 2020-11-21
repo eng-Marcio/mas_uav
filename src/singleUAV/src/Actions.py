@@ -4,6 +4,8 @@ import rospy
 import mavros_msgs.srv
 import geometry_msgs.msg
 import std_msgs.msg
+import math
+
 
 class Actions:
 
@@ -55,8 +57,24 @@ class Actions:
     def SetPoint(self, des):
         pos = geometry_msgs.msg.Point(des[0], des[1], des[2]) ##set a linear destination as a 3d point in space
         self.cur_dest = pos
-        pose = geometry_msgs.msg.Pose(position=pos)
+        quat = geometry_msgs.msg.Quaternion()
+        if(len(des) > 3): ##angle given
+            quat_from_eu = self.euler_to_quaternion(0, 0, des[3]*math.pi/180)
+            quat.x = quat_from_eu[0]
+            quat.y = quat_from_eu[1]
+            quat.z = quat_from_eu[2]
+            quat.w = quat_from_eu[3]
+        pose = geometry_msgs.msg.Pose(position=pos, orientation=quat)
         header = std_msgs.msg.Header()
         header.stamp = rospy.Time.now()
         self.setPoint_pub.publish(pose=pose, header=header)
+
+    def euler_to_quaternion(self, roll, pitch, yaw):
+
+        qx = math.sin(roll/2) * math.cos(pitch/2) * math.cos(yaw/2) - math.cos(roll/2) * math.sin(pitch/2) * math.sin(yaw/2)
+        qy = math.cos(roll/2) * math.sin(pitch/2) * math.cos(yaw/2) + math.sin(roll/2) * math.cos(pitch/2) * math.sin(yaw/2)
+        qz = math.cos(roll/2) * math.cos(pitch/2) * math.sin(yaw/2) - math.sin(roll/2) * math.sin(pitch/2) * math.cos(yaw/2)
+        qw = math.cos(roll/2) * math.cos(pitch/2) * math.cos(yaw/2) + math.sin(roll/2) * math.sin(pitch/2) * math.sin(yaw/2)
+
+        return [qx, qy, qz, qw]
 

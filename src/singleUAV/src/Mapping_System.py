@@ -27,7 +27,7 @@ class Mapping_System(SearchProblem):
     def start(self):##starts the operating variables
         self.pathFinder = SearchProblem(self)
         #build a map 30mx30m: 25cm resolution >>array 120x120 with obstacles
-        self.map = self.buildMap(120, 120, 0) 
+        self.map = self.buildMap(120, 120, 0.02) 
 
     def trajectoryService(self):
         curr = self.controler.perceptions.getPos()
@@ -38,11 +38,7 @@ class Mapping_System(SearchProblem):
         return self.convertToCoord(path)
 
     ## Mapping_System mathods
-    def getFlightPlan(self): ## tem que refazer,chamar a função recalcula rota
-        # self.cur_pos = [10, 10]
-        # self.goal = [100, 100]
-        # self.map[10][10] = 0
-        # self.map[100][100] = 0  #guarantee that origin and destination are reachable
+    def getFlightPlan(self): 
         self.path = aStarSearch(self.pathFinder)
         return self.path
 
