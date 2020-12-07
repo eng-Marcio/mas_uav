@@ -11,6 +11,7 @@ class Mapping_System(SearchProblem):
         ##maintain pointer to controler
         self.controler = controler
         self.path = []
+        self.pathCells = []
         self.offsetX = -10     #
         self.offsetY = -10     # constants to convert matrix to gps
         self.resolution = 0.25  #
@@ -30,8 +31,10 @@ class Mapping_System(SearchProblem):
     def start(self):##starts the operating variables
         self.pathFinder = SearchProblem(self)
         #build a map 30mx30m: 25cm resolution >>array 120x120 with obstacles
-        self.map = self.buildRealisticMap(40, 40) #(120,120,0.02)
+        #self.map = self.buildRealisticMap(40, 40) #(120,120,0.02)
         #self.map = self.buildMap(120, 120,0) #(120,120,0.02)
+        self.buildCSVMaps()
+
 
     def trajectoryService(self):
         curr = self.controler.perceptions.getPos()
@@ -53,13 +56,15 @@ class Mapping_System(SearchProblem):
         x, y = self.matrixToGPS(self.cur_pos[0], self.cur_pos[1])
         angle = -1
         res = []
-
+        self.pathCells = []
+        self.pathCells.append([x,y])
         #loops through A* commands
         i = 0
         while(i < len(pathCommands)):
             delta = self.deltaDist(pathCommands[i])
             x = x + delta[0]
             y = y + delta[1]
+            self.pathCells.append([x,y])
             newAngle = delta[2]
             if((i != 0)and(i  != len(pathCommands)- 1)): #you must have 3 elements to check diagonals
                 ##criteria for diagonals, they are always 101: RNR, LSL, SRS
@@ -118,28 +123,51 @@ class Mapping_System(SearchProblem):
             i+=1
         return mapp
     
-    def buildMapFromCSVFile(self):
-        #print("Criando arquivo CSV")
+    def readMapFromCSVFile(self, address):
+        
+        cr = csv.reader(open(address,"rb"))
+        strMap = list(cr)
+        map = []
+        for i in range(len(strMap)):
+            line = []
+            for j in range(len(strMap[0])):
+                if('1' in strMap[i][j]):
+                    line.append(1)
+                else:
+                    line.append(0)                
+            map.append(line)
+        return map
+        
 
-        #with open("StebMapSource.csv", "a") as arquivo_csv:
-         #   escrever = csv.writer(arquivo_csv, delimiter=",", lineterminator="\n")
-          #  escrever.writerow(["Yanka", "Desenvolvedora Sênior"])
-        sizeMapFile = 0
-        #with open("MapSource.csv", "r") as arquivo_csv:
-            #leitor = csv.reader(arquivo_csv, delimiter=",")
-            #for coluna in leitor:
-              #  print(coluna)
-        cr = csv.reader(open("MapSource.csv","rb"))
-       
-        print("o tamnaho é : {}".format(cr.field_size_limit()))
-        for row in cr:
-            line = " ".join(row)
-            print (line.replace(",",""))
+    def buildCSVMaps(self):
+        self.map = self.readMapFromCSVFile("/home/marcio/jason_ros_ws/src/mas_uav/KnownMap.csv")
+        self.RealMap = self.readMapFromCSVFile("/home/marcio/jason_ros_ws/src/mas_uav/RealMap.csv")
 
-        print("Termino leitura arquivo CSV")
+    def checkCollision(self, obsPos):
+        for pos in self.pathCells:
+            if(abs(pos[0]-obsPos[0])<=1 and abs(pos[1]-obsPos[1])<=1):
+                return True #possible collision detected
+        return False
 
+    def lidarTask(self, cur_pos): #lidar has 1.5 meter range >> 6 cells for each direction
+        collision = False
+        for i in range(13):
+            for j in range(13):
+                x = cur_pos[0] + i - 6
+                y = cur_pos[1] + j - 6
+                if((self.dist(x,y,cur_pos[0], cur_pos[1]) > 6) or (x >= len(self.map) or y >= len(self.map[0]))):
+                    continue
+                if(self.RealMap[x][y] == 1 and self.map[x][y] == 0): #new obstacle found
+                    self.map[x][y] = 1
+                    if(self.checkCollision([x,y])):
+                        collision = True
 
+        if collision:
+            self.controler.trajectoryState = self.controler.T_None
 
+    def dist(self, a1, a2, b1, b2):
+        return math.sqrt((a1 - b1)**2+(a2 - b2)**2)
+    
     def printMap(self):
         mapp = self.map
         ##add the path
@@ -291,3 +319,11 @@ class Mapping_System(SearchProblem):
                 arrayLidar.append(1)
             i+=1
         return arrayLidar
+
+if __name__ == '__main__':
+    mapp = Mapping_System(None)
+    mapp.start()
+    mapp.pathCells = []
+    mapp.pathCells.append([13,15])
+    mapp.lidarTask([13,13])
+    print(mapp.map)

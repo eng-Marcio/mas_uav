@@ -174,6 +174,8 @@ class Controler:
                 if(self.stateChanged):                    ##no setup needed
                     self.stateChanged = False
                 cur_pos = self.perceptions.getPos()
+                cell_pos = self.mapping_System.GPSToMatrix(cur_pos[0], cur_pos[1])
+                self.mapping_System.lidarTask(cell_pos)
                 if((self.trajectoryState == self.T_None) or matchPositions(cur_pos, [self.actions.des.x, self.actions.des.y, self.actions.des.z], 0.5)): ##slam found an obstacle or destination reached
                     self.setState(self.S_HoldPos)
                 else:
