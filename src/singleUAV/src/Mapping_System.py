@@ -4,15 +4,18 @@ from search import SearchProblem
 from search import aStarSearch
 import random
 import math
+import csv
 
 class Mapping_System(SearchProblem):
     def __init__(self,controler):
         ##maintain pointer to controler
         self.controler = controler
-        
+        self.path = []
         self.offsetX = -10     #
         self.offsetY = -10     # constants to convert matrix to gps
         self.resolution = 0.25  #
+        #self.resolution = 0.5  #
+        
 
     def matrixToGPS(self, xMat, yMat):
         xgps = (xMat + self.offsetX)*self.resolution
@@ -27,15 +30,17 @@ class Mapping_System(SearchProblem):
     def start(self):##starts the operating variables
         self.pathFinder = SearchProblem(self)
         #build a map 30mx30m: 25cm resolution >>array 120x120 with obstacles
-        self.map = self.buildMap(120, 120, 0.02) 
+        self.map = self.buildRealisticMap(40, 40) #(120,120,0.02)
+        #self.map = self.buildMap(120, 120,0) #(120,120,0.02)
 
     def trajectoryService(self):
         curr = self.controler.perceptions.getPos()
         des = self.controler.actions.des
         self.cur_pos = self.GPSToMatrix(curr[0], curr[1])
         self.goal = self.GPSToMatrix(des.x, des.y)
-        path = self.getFlightPlan()
-        return self.convertToCoord(path)
+        self.path = self.getFlightPlan()
+
+        return self.convertToCoord(self.path)
 
     ## Mapping_System mathods
     def getFlightPlan(self): 
@@ -101,10 +106,47 @@ class Mapping_System(SearchProblem):
 
         return arr
     
+    def buildRealisticMap(self, sizeX, sizeY):
+        mapp = self.buildMap(sizeX,sizeY,0)
+        i = 8
+        j = 16
+        while (i<22):
+            while(j<26):
+                mapp[i][j] = 1
+                j+=1
+            j = 16
+            i+=1
+        return mapp
+    
+    def buildMapFromCSVFile(self):
+        #print("Criando arquivo CSV")
+
+        #with open("StebMapSource.csv", "a") as arquivo_csv:
+         #   escrever = csv.writer(arquivo_csv, delimiter=",", lineterminator="\n")
+          #  escrever.writerow(["Yanka", "Desenvolvedora Sênior"])
+        sizeMapFile = 0
+        #with open("MapSource.csv", "r") as arquivo_csv:
+            #leitor = csv.reader(arquivo_csv, delimiter=",")
+            #for coluna in leitor:
+              #  print(coluna)
+        cr = csv.reader(open("MapSource.csv","rb"))
+       
+        print("o tamnaho é : {}".format(cr.field_size_limit()))
+        for row in cr:
+            line = " ".join(row)
+            print (line.replace(",",""))
+
+        print("Termino leitura arquivo CSV")
+
+
+
     def printMap(self):
         mapp = self.map
         ##add the path
-        x, y = self.cur_pos
+        #x, y = self.cur_pos
+        curr = self.controler.perceptions.getPos()
+        x, y = self.GPSToMatrix(curr[0], curr[1])
+        mapp[x][y] = 4
         for i in self.path:
             if i=='L':
                 x = x-1
@@ -124,14 +166,20 @@ class Mapping_System(SearchProblem):
             string = ""
             for x in range(len(mapp)):
                 if(mapp[x][limit - y - 1] == 0): #no obstacle
-                    string = string + "-"
+                    string = string + " "
                 elif(mapp[x][limit - y - 1] == 1): #obstacle
                     string = string + "#"
                 elif(mapp[x][limit - y - 1] == 2): #path
                     string = string + "o"
                 elif(mapp[x][limit - y - 1] == 3): #colision
-                    string = string + "x"
+                    string = string + "c" 
+                elif(mapp[x][limit - y - 1] == 4): #drone
+                    string = string + "X"
             print(string)
+            
+    
+    
+
 
     def updateCurrentMap(self,posXUAVGPS,posYUAVGPS,AngleUAVGPS,inputLidarArray=0):
         angleInArray = 0 ## 0 - 270
@@ -152,23 +200,36 @@ class Mapping_System(SearchProblem):
         
             angleInArray +=1
         PosUAVMatrix = self.GPSToMatrix(posXUAVGPS,posYUAVGPS)
-        self.map[int(PosUAVMatrix[0])][int(PosUAVMatrix[1])]= 8 ## update the map with drone position
+        #self.map[int(PosUAVMatrix[0])][int(PosUAVMatrix[1])]= 8 ## update the map with drone position
 
     
-    def updateCurrentMapInterface(self):## this function updates the txt file used as an interface to monitor the development of the map
+    def updateCurrentMapInterface(self,miniMap=0):## this function updates the txt file used as an interface to monitor the development of the map
+        localMap = self.map
+        posUAVGPS = self.controler.perceptions.getPos()
+        PosUAVMatrix = self.GPSToMatrix(posUAVGPS[0],posUAVGPS[1])
+        localMap[int(PosUAVMatrix[0])][int(PosUAVMatrix[1])]= 8
         fileText = open("CurrentMap.txt","w")## clean what has in this file
         fileText.close()
 
         lines = list()
-        fileText = open("CurrentMap.txt","a")
-        j=0
-        while (j<120):
-            var = self.map[j]
-            lines.append('{} --> {}\n'.format(var,j))## add map line in the list
-            j+=1
-        fileText.writelines(lines)
-        fileText.close()
         
+        if(miniMap == 0):
+            fileText = open("CurrentMap.txt","a")
+            j=0
+            while (j<120):
+                var = localMap[j]
+                lines.append('{} --> {}\n'.format(var,j))## add map line in the list
+                j+=1
+            fileText.writelines(lines)
+            fileText.close()
+            print("updated CurrentMinimizedFile")
+        else:
+            lines = miniMap
+            fileText = open("CurrentMap.txt","a")
+            fileText.writelines(lines)
+            fileText.close()
+            print("updated CurrentMinimizedFile")
+            
         return 
 
     def getCurrentMapString(self):
@@ -178,6 +239,46 @@ class Mapping_System(SearchProblem):
             listMapLines.append(str(self.map[i]).strip('[]'))
             i+=1
         return '\n'.join(map(str,listMapLines))
+
+    def getCurrentMinimizedMapString(self):
+        localMap = self.map
+        posUAVGPS = self.controler.perceptions.getPos()
+        PosUAVMatrix = self.GPSToMatrix(posUAVGPS[0],posUAVGPS[1])
+        localMap[int(PosUAVMatrix[0])][int(PosUAVMatrix[1])]= 8
+        i=0
+        j=0
+        minimizedMap = self.buildMap(len(localMap)/2, len(localMap)/2, 0)
+        
+        if(len(self.controler.trajectory)>1):
+            for y in range(len(self.controler.trajectory)):
+                checkpointTraj = self.GPSToMatrix(self.controler.trajectory[y][0],self.controler.trajectory[y][1])
+                localMap[int(checkpointTraj[0])][int(checkpointTraj[1])]= -4
+
+
+        while (i<len(localMap)/2):
+            while (j<len(localMap)/2):
+                minimizedMap[i][j] = localMap[i*2][j*2]+localMap[(i*2)+1][j*2]+localMap[i*2][(j*2)+1]+localMap[(i*2)+1][(j*2)+1]
+                if(minimizedMap[i][j]>=8):
+                    minimizedMap[i][j] = 8#drone is here
+                if(minimizedMap[i][j]<0):
+                    minimizedMap[i][j] = 9#checkpoint is here
+                j+=1
+            j=0
+            i+=1
+
+        
+
+
+        i=0
+        listMapLines = []
+        while (i<len(minimizedMap)):
+            listMapLines.append(str(minimizedMap[i]).strip('[]'))
+            i+=1
+        text = '\n'.join(map(str,listMapLines))
+        text = text.replace(","," ")
+        text = text.replace("8","X")#drone
+        text = text.replace("0"," ")
+        return text.replace("9","O")#checkPoint of trajectory
 
     def createForsedLidarArray(self,range = 270, max = 5):##create a signal similar to the one that would come from dealing, function for testing
         i=0

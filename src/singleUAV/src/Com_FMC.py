@@ -52,11 +52,13 @@ class Com_FMC:
             des = self.controler.actions.cur_dest
             if("map" in message):##if the controller receives the map request
                 res = "CurrenMap \n"
-                res = res + self.controler.mapping_System.getCurrentMapString()##add the map string and the map itself
+                res = res + self.controler.mapping_System.getCurrentMinimizedMapString()##add the map string and the map itself 
+                #if(len(self.controler.trajectory)>1):  
+                #    res = res + (self.controler.trajectory[0])
                 suc = True
             else:
                 res = "currentState: {}; position -> lat: {}, long: {}, alt: {}, dest = {},{},{}".format(self.NameStateList[int(self.controler.currentState)], pos[0], pos[1], pos[2], des.x, des.y, des.z)
-            
+                res = res + ",".join(self.controler.mapping_System.path)
             if("exit" in message):
                 self.socket.send(b"comand sent successfully.")
                 break                     ##stops the server
@@ -129,8 +131,11 @@ class FMClient:
             
             res = self.socket.recv()
             if("CurrenMap" in res):
-                
+                print(res)
                 self.updateCurrentMapInterface(res)
+            if("TrajectoryMap" in res):
+                print(res)
+                #self.updateCurrentMapInterface(res)
             else:
                 print(res)
             
@@ -146,6 +151,8 @@ class FMClient:
         fileText = open("CurrentMap.txt","a")
         fileText.writelines(lines)
         fileText.close()
+        print("updated CurrentMinimizedFile")
+       
 
 if __name__ == '__main__':
     FMClient()

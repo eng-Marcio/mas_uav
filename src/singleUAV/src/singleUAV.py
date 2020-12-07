@@ -256,19 +256,18 @@ def matchPositions(pos1, pos2, tol):
 import sensor_msgs.msg
 
 def main():
-
-    #new code for initialization
+ 	#new code for initialization
     print("Starting python node.")
     controler = Controler()
     controler.start()
     controler.controlState() ##start controlling system
+    #controler.mapping_System.buildMapFromCSVFile()
 
     return
-
-
-    controler.mapping_System.updateCurrentMap(0,0,0,controler.mapping_System.createForsedLidarArray())
-
-    controler.mapping_System.updateCurrentMapInterface()
+    #controler.mapping_System.updateCurrentMap(0,0,0,controler.mapping_System.createForsedLidarArray())
+    #controler.mapping_System.updateCurrentMapInterface()
+    return
+    print(controler.mapping_System.getCurrentMinimizedMapString())
     print("experimento terminou")
     ##controler.mapping_System.update.updateCurrentMap()
     return
