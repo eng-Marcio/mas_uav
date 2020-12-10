@@ -132,6 +132,7 @@ class FMClient:
             res = self.socket.recv()
             if("CurrenMap" in res):
                 print(res)
+                print("printed res")
                 self.updateCurrentMapInterface(res)
             if("TrajectoryMap" in res):
                 print(res)

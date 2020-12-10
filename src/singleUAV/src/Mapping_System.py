@@ -5,6 +5,7 @@ from search import aStarSearch
 import random
 import math
 import csv
+import rospy
 
 class Mapping_System(SearchProblem):
     def __init__(self,controler):
@@ -140,8 +141,8 @@ class Mapping_System(SearchProblem):
         
 
     def buildCSVMaps(self):
-        self.map = self.readMapFromCSVFile("/home/marcio/jason_ros_ws/src/mas_uav/KnownMap.csv")
-        self.RealMap = self.readMapFromCSVFile("/home/marcio/jason_ros_ws/src/mas_uav/RealMap.csv")
+        self.map = self.readMapFromCSVFile("/home/pedro/jason_ros_ws/src/mas_uav/KnownMap.csv")
+        self.RealMap = self.readMapFromCSVFile("/home/pedro/jason_ros_ws/src/mas_uav/RealMap.csv")
 
     def checkCollision(self, obsPos):
         for pos in self.pathCells:
@@ -274,7 +275,7 @@ class Mapping_System(SearchProblem):
         PosUAVMatrix = self.GPSToMatrix(posUAVGPS[0],posUAVGPS[1])
         localMap[int(PosUAVMatrix[0])][int(PosUAVMatrix[1])]= 8
         i=0
-        j=0
+        j=0 
         minimizedMap = self.buildMap(len(localMap)/2, len(localMap)/2, 0)
         
         if(len(self.controler.trajectory)>1):
@@ -282,9 +283,8 @@ class Mapping_System(SearchProblem):
                 checkpointTraj = self.GPSToMatrix(self.controler.trajectory[y][0],self.controler.trajectory[y][1])
                 localMap[int(checkpointTraj[0])][int(checkpointTraj[1])]= -4
 
-
-        while (i<len(localMap)/2):
-            while (j<len(localMap)/2):
+        while (i<(len(localMap)/2)):
+            while (j<(len(localMap)/2)-1):
                 minimizedMap[i][j] = localMap[i*2][j*2]+localMap[(i*2)+1][j*2]+localMap[i*2][(j*2)+1]+localMap[(i*2)+1][(j*2)+1]
                 if(minimizedMap[i][j]>=8):
                     minimizedMap[i][j] = 8#drone is here
@@ -293,14 +293,10 @@ class Mapping_System(SearchProblem):
                 j+=1
             j=0
             i+=1
-
-        
-
-
         i=0
         listMapLines = []
         while (i<len(minimizedMap)):
-            listMapLines.append(str(minimizedMap[i]).strip('[]'))
+            listMapLines.append(str(minimizedMap[(len(minimizedMap)-1)-i]).strip('[]'))
             i+=1
         text = '\n'.join(map(str,listMapLines))
         text = text.replace(","," ")
