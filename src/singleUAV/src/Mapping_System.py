@@ -6,6 +6,7 @@ import random
 import math
 import csv
 import rospy
+import copy
 
 class Mapping_System(SearchProblem):
     def __init__(self,controler):
@@ -141,8 +142,8 @@ class Mapping_System(SearchProblem):
         
 
     def buildCSVMaps(self):
-        self.map = self.readMapFromCSVFile("/home/pedro/jason_ros_ws/src/mas_uav/KnownMap.csv")
-        self.RealMap = self.readMapFromCSVFile("/home/pedro/jason_ros_ws/src/mas_uav/RealMap.csv")
+        self.map = self.readMapFromCSVFile("/home/marcio/jason_ros_ws/src/mas_uav/KnownMap.csv")
+        self.RealMap = self.readMapFromCSVFile("/home/marcio/jason_ros_ws/src/mas_uav/RealMap.csv")
 
     def checkCollision(self, obsPos):
         for pos in self.pathCells:
@@ -270,7 +271,7 @@ class Mapping_System(SearchProblem):
         return '\n'.join(map(str,listMapLines))
 
     def getCurrentMinimizedMapString(self):
-        localMap = self.map
+        localMap = copy.deepcopy(self.map)
         posUAVGPS = self.controler.perceptions.getPos()
         PosUAVMatrix = self.GPSToMatrix(posUAVGPS[0],posUAVGPS[1])
         localMap[int(PosUAVMatrix[0])][int(PosUAVMatrix[1])]= 8
