@@ -17,6 +17,7 @@ class Mapping_System(SearchProblem):
         self.offsetX = -10     #
         self.offsetY = -10     # constants to convert matrix to gps
         self.resolution = 0.25  #
+        self.cur_pos = [0,0]
         #self.resolution = 0.5  #
         
 
@@ -142,8 +143,8 @@ class Mapping_System(SearchProblem):
         
 
     def buildCSVMaps(self):
-        self.map = self.readMapFromCSVFile("/home/marcio/jason_ros_ws/src/mas_uav/KnownMap.csv")
-        self.RealMap = self.readMapFromCSVFile("/home/marcio/jason_ros_ws/src/mas_uav/RealMap.csv")
+        self.map = self.readMapFromCSVFile("/home/pedro/jason_ros_ws/src/mas_uav/KnownMap.csv")
+        self.RealMap = self.readMapFromCSVFile("/home/pedro/jason_ros_ws/src/mas_uav/RealMap.csv")
 
     def checkCollision(self, obsPos):
         for pos in self.pathCells:
@@ -271,26 +272,37 @@ class Mapping_System(SearchProblem):
         return '\n'.join(map(str,listMapLines))
 
     def getCurrentMinimizedMapString(self):
-        localMap = copy.deepcopy(self.map)
-        posUAVGPS = self.controler.perceptions.getPos()
-        PosUAVMatrix = self.GPSToMatrix(posUAVGPS[0],posUAVGPS[1])
-        localMap[int(PosUAVMatrix[0])][int(PosUAVMatrix[1])]= 8
-        i=0
-        j=0 
-        minimizedMap = self.buildMap(len(localMap)/2, len(localMap)/2, 0)
-        
-        if(len(self.controler.trajectory)>1):
-            for y in range(len(self.controler.trajectory)):
-                checkpointTraj = self.GPSToMatrix(self.controler.trajectory[y][0],self.controler.trajectory[y][1])
-                localMap[int(checkpointTraj[0])][int(checkpointTraj[1])]= -4
+        localMap = copy.deepcopy(self.map) #starts a proper map of the function
+        posUAVGPS = self.controler.perceptions.getPos() #indicates the actual position of the drone on the map
+        coordMatrix_X , coordMatrix_Y = self.GPSToMatrix(posUAVGPS[0], posUAVGPS[1])
+        localMap[coordMatrix_X][coordMatrix_Y]= 100#indicates the actual position of the drone on the map
+        x, y = self.cur_pos #indicates first position of the path found by the algorithm
+        rospy.loginfo("firtCoordPath x = {}, y = {}".format(x,y))
 
+        testMessage = ("len(localMap) = {} , len(localMap[0] = {})".format(len(localMap),len(localMap[0])))
+        rospy.loginfo(testMessage)
+        for i in self.path:
+            if i=='L':
+                x = x-1
+            elif i=='R':
+                x = x+1
+            elif i=='N':
+                y = y+1
+            elif i=='S':
+                y = y-1
+            rospy.loginfo("path marker x = {}, y = {}".format(x,y))
+            localMap[x][y] = -10
+        i,j = 0, 0
+        minimizedMap = self.buildMap(len(localMap)/2, len(localMap)/2, 0)
         while (i<(len(localMap)/2)):
             while (j<(len(localMap)/2)-1):
                 minimizedMap[i][j] = localMap[i*2][j*2]+localMap[(i*2)+1][j*2]+localMap[i*2][(j*2)+1]+localMap[(i*2)+1][(j*2)+1]
-                if(minimizedMap[i][j]>=8):
+                if(minimizedMap[i][j]>=10):
                     minimizedMap[i][j] = 8#drone is here
                 if(minimizedMap[i][j]<0):
                     minimizedMap[i][j] = 9#checkpoint is here
+                if(minimizedMap[i][j]>0 and minimizedMap[i][j]<5):
+                    minimizedMap[i][j] = 1# obstacle
                 j+=1
             j=0
             i+=1
@@ -303,7 +315,8 @@ class Mapping_System(SearchProblem):
         text = text.replace(","," ")
         text = text.replace("8","X")#drone
         text = text.replace("0"," ")
-        return text.replace("9","O")#checkPoint of trajectory
+        text = text.replace("1","#")#obstacle
+        return text.replace("9","*")#checkPoint of trajectory
 
     def createForsedLidarArray(self,range = 270, max = 5):##create a signal similar to the one that would come from dealing, function for testing
         i=0

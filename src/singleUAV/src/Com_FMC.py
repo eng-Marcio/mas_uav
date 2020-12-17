@@ -57,8 +57,8 @@ class Com_FMC:
                 #    res = res + (self.controler.trajectory[0])
                 suc = True
             else:
-                res = "currentState: {}; position -> lat: {}, long: {}, alt: {}, dest = {},{},{}".format(self.NameStateList[int(self.controler.currentState)], pos[0], pos[1], pos[2], des.x, des.y, des.z)
-                res = res + ",".join(self.controler.mapping_System.path)
+                res = "currentState: {}; position -> lat: {}, long: {}, alt: {}, mapPos{},  dest = {},{},{}".format(self.NameStateList[int(self.controler.currentState)], pos[0], pos[1], pos[2],self.controler.mapping_System.GPSToMatrix(pos[0],pos[1]), des.x, des.y, des.z)
+                #res = res + ",".join(self.controler.mapping_System.path)
             if("exit" in message):
                 self.socket.send(b"comand sent successfully.")
                 break                     ##stops the server
