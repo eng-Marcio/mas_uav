@@ -134,11 +134,9 @@ class FMClient:
             res = self.socket.recv()
             if("CurrenMap" in res):
                 localMap = self.stringMapToMatrixmap(res.replace("CurrenMap \n","").replace("; comand sent successfully.",""))
-                #print(localMap)
-
                 minimMap = self.minimizeMap(localMap)
-                print((minimMap))
-                print(self.interfaceTranslater(localMap))
+                print(self.interfaceTranslater(minimMap))
+                self.updateCurrentMapInterface(self.interfaceTranslater(localMap))
             if("TrajectoryMap" in res):
                 print(res)
                 #self.updateCurrentMapInterface(res)
