@@ -14,8 +14,8 @@ class Mapping_System(SearchProblem):
         self.controler = controler
         self.path = []
         self.pathCells = []
-        self.offsetX = -10     #
-        self.offsetY = -10     # constants to convert matrix to gps
+        self.offsetX = -60     #
+        self.offsetY = -20     # constants to convert matrix to gps
         self.resolution = 0.25  #
         self.cur_pos = [0,0]
         #self.resolution = 0.5  #
@@ -60,14 +60,14 @@ class Mapping_System(SearchProblem):
         angle = -1
         res = []
         self.pathCells = []
-        self.pathCells.append([x,y])
+        self.pathCells.append(self.GPSToMatrix(x,y))
         #loops through A* commands
         i = 0
         while(i < len(pathCommands)):
             delta = self.deltaDist(pathCommands[i])
             x = x + delta[0]
             y = y + delta[1]
-            self.pathCells.append([x,y])
+            self.pathCells.append(self.GPSToMatrix(x,y))
             newAngle = delta[2]
             if((i != 0)and(i  != len(pathCommands)- 1)): #you must have 3 elements to check diagonals
                 ##criteria for diagonals, they are always 101: RNR, LSL, SRS
@@ -85,6 +85,7 @@ class Mapping_System(SearchProblem):
             res.append([x,y,z,newAngle])
             angle = newAngle
             i = i+1
+        rospy.loginfo("!!!!!!!!!!!!{}!!!!!!!!!!".format(self.pathCells))
         return res
     
     def deltaDist(self, com):
@@ -154,17 +155,21 @@ class Mapping_System(SearchProblem):
 
     def lidarTask(self, cur_pos): #lidar has 1.5 meter range >> 6 cells for each direction
         collision = False
-        for i in range(13):
-            for j in range(13):
-                x = cur_pos[0] + i - 6
-                y = cur_pos[1] + j - 6
-                if((self.dist(x,y,cur_pos[0], cur_pos[1]) > 6) or (x >= len(self.map) or y >= len(self.map[0]))):
+        for i in range(25):
+            for j in range(25):
+                x = cur_pos[0] + i - 12
+                y = cur_pos[1] + j - 12
+                if((self.dist(x,y,cur_pos[0], cur_pos[1]) > 12) or (x >= len(self.map) or y >= len(self.map[0]))):
                     continue
                 if(self.RealMap[x][y] == 1 and self.map[x][y] == 0): #new obstacle found
                     self.map[x][y] = 1
+                    rospy.loginfo([x,y])
                     if(self.checkCollision([x,y])):
                         collision = True
+                        rospy.loginfo("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!savaiporraber!!!!!!!!!!!!!!!!!!!!!!!!")
 
+                      
+                    
         if collision:
             self.controler.trajectoryState = self.controler.T_None
 
@@ -233,35 +238,6 @@ class Mapping_System(SearchProblem):
         PosUAVMatrix = self.GPSToMatrix(posXUAVGPS,posYUAVGPS)
         #self.map[int(PosUAVMatrix[0])][int(PosUAVMatrix[1])]= 8 ## update the map with drone position
 
-    
-    def updateCurrentMapInterface(self,miniMap=0):## this function updates the txt file used as an interface to monitor the development of the map
-        localMap = self.map
-        posUAVGPS = self.controler.perceptions.getPos()
-        PosUAVMatrix = self.GPSToMatrix(posUAVGPS[0],posUAVGPS[1])
-        localMap[int(PosUAVMatrix[0])][int(PosUAVMatrix[1])]= 8
-        fileText = open("CurrentMap.txt","w")## clean what has in this file
-        fileText.close()
-
-        lines = list()
-        
-        if(miniMap == 0):
-            fileText = open("CurrentMap.txt","a")
-            j=0
-            while (j<120):
-                var = localMap[j]
-                lines.append('{} --> {}\n'.format(var,j))## add map line in the list
-                j+=1
-            fileText.writelines(lines)
-            fileText.close()
-            print("updated CurrentMinimizedFile")
-        else:
-            lines = miniMap
-            fileText = open("CurrentMap.txt","a")
-            fileText.writelines(lines)
-            fileText.close()
-            print("updated CurrentMinimizedFile")
-            
-        return 
 
     def getCurrentMapString(self):
         i=0
@@ -271,52 +247,32 @@ class Mapping_System(SearchProblem):
             i+=1
         return '\n'.join(map(str,listMapLines))
 
-    def getCurrentMinimizedMapString(self):
-        localMap = copy.deepcopy(self.map) #starts a proper map of the function
-        posUAVGPS = self.controler.perceptions.getPos() #indicates the actual position of the drone on the map
-        coordMatrix_X , coordMatrix_Y = self.GPSToMatrix(posUAVGPS[0], posUAVGPS[1])
-        localMap[coordMatrix_X][coordMatrix_Y]= 100#indicates the actual position of the drone on the map
-        x, y = self.cur_pos #indicates first position of the path found by the algorithm
-        rospy.loginfo("firtCoordPath x = {}, y = {}".format(x,y))
+    
 
-        testMessage = ("len(localMap) = {} , len(localMap[0] = {})".format(len(localMap),len(localMap[0])))
-        rospy.loginfo(testMessage)
-        for i in self.path:
-            if i=='L':
-                x = x-1
-            elif i=='R':
-                x = x+1
-            elif i=='N':
-                y = y+1
-            elif i=='S':
-                y = y-1
-            rospy.loginfo("path marker x = {}, y = {}".format(x,y))
-            localMap[x][y] = -10
-        i,j = 0, 0
-        minimizedMap = self.buildMap(len(localMap)/2, len(localMap)/2, 0)
-        while (i<(len(localMap)/2)):
-            while (j<(len(localMap)/2)-1):
-                minimizedMap[i][j] = localMap[i*2][j*2]+localMap[(i*2)+1][j*2]+localMap[i*2][(j*2)+1]+localMap[(i*2)+1][(j*2)+1]
-                if(minimizedMap[i][j]>=10):
-                    minimizedMap[i][j] = 8#drone is here
-                if(minimizedMap[i][j]<0):
-                    minimizedMap[i][j] = 9#checkpoint is here
-                if(minimizedMap[i][j]>0 and minimizedMap[i][j]<5):
-                    minimizedMap[i][j] = 1# obstacle
-                j+=1
-            j=0
-            i+=1
+   
+    
+    def MatrixToString(self,inputMatrix):
         i=0
         listMapLines = []
-        while (i<len(minimizedMap)):
-            listMapLines.append(str(minimizedMap[(len(minimizedMap)-1)-i]).strip('[]'))
+        while (i<len(inputMatrix)):
+            listMapLines.append(str(inputMatrix[(len(inputMatrix)-1)-i]).strip('[]'))
             i+=1
+
         text = '\n'.join(map(str,listMapLines))
-        text = text.replace(","," ")
-        text = text.replace("8","X")#drone
-        text = text.replace("0"," ")
-        text = text.replace("1","#")#obstacle
-        return text.replace("9","*")#checkPoint of trajectory
+        return text
+
+    def getCurrentMapTracked(self,selfmap):
+        localMap = copy.deepcopy(selfmap) #starts a proper map of the function
+        posUAVGPS = self.controler.perceptions.getPos() #indicates the actual position of the drone on the map
+        coordMatrix_X , coordMatrix_Y = self.GPSToMatrix(posUAVGPS[0], posUAVGPS[1])
+        x, y = self.cur_pos #indicates first position of the path found by the algorithm
+       
+        for i in self.pathCells:
+            x,y = i
+            localMap[x][y] = 2
+        localMap[coordMatrix_X][coordMatrix_Y]= 3#indicates the actual position of the drone on the map
+
+        return localMap
 
     def createForsedLidarArray(self,range = 270, max = 5):##create a signal similar to the one that would come from dealing, function for testing
         i=0
@@ -329,11 +285,44 @@ class Mapping_System(SearchProblem):
                 arrayLidar.append(1)
             i+=1
         return arrayLidar
+    
+    def stringMapToMatrixmap(self, inputStringMap):
+            inputStringMap = inputStringMap.replace("[","").replace("]","")
+            _list = inputStringMap.split("\n")
+            _sec_list = _list[0].split(",")
+            y,x=len(_list),len(_sec_list)
+            localMatrix = [[0 for i in range(x)]for j in range(y)]
+            i,j= 0 , 0
+            print len(_list)
+            while i < len(_list):
+                _sec_list = _list[i].split(",")
+                while j < len(_sec_list):
+                    try:
+                        localMatrix[i][j] = int(_sec_list[j]) ## try parsing the 3 coordinates provided 
+                    except ValueError:
+                        print _sec_list[j]
+                        return "deu ruim"
+                    j+=1
+                i+=1
+                j = 0
+            return localMatrix
+
 
 if __name__ == '__main__':
     mapp = Mapping_System(None)
     mapp.start()
-    mapp.pathCells = []
-    mapp.pathCells.append([13,15])
-    mapp.lidarTask([13,13])
-    print(mapp.map)
+    testeMatrix = "[0,2,1]\n[1,2,1]\n[2,2,1]"
+  
+    lista = mapp.stringMapToMatrixmap(testeMatrix)
+    print(lista)
+    print(type(lista[0]))
+    print(type(lista[0][0]))
+    print((lista[0]))
+    
+
+    
+    #mapp.start()
+    #mapp.pathCells = []
+    #mapp.pathCells.append([13,15])
+    #mapp.lidarTask([13,13])
+    #print(mapp.map)

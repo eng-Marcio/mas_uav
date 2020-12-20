@@ -264,14 +264,6 @@ def main():
     controler.start()
     controler.controlState() ##start controlling system
     #controler.mapping_System.buildMapFromCSVFile()
-
-    return
-    #controler.mapping_System.updateCurrentMap(0,0,0,controler.mapping_System.createForsedLidarArray())
-    #controler.mapping_System.updateCurrentMapInterface()
-    return
-    print(controler.mapping_System.getCurrentMinimizedMapString())
-    print("experimento terminou")
-    ##controler.mapping_System.update.updateCurrentMap()
     return
 
 if __name__ == '__main__':
