@@ -144,8 +144,8 @@ class Mapping_System(SearchProblem):
         
 
     def buildCSVMaps(self):
-        self.map = self.readMapFromCSVFile("/home/pedro/jason_ros_ws/src/mas_uav/KnownMap.csv")
-        self.RealMap = self.readMapFromCSVFile("/home/pedro/jason_ros_ws/src/mas_uav/RealMap.csv")
+        self.map = self.readMapFromCSVFile("/home/pedro/pi_ros_ws/src/mas_uav/KnownMap.csv")
+        self.RealMap = self.readMapFromCSVFile("/home/pedro/pi_ros_ws/src/mas_uav/RealMap.csv")
 
     def checkCollision(self, obsPos):
         for pos in self.pathCells:

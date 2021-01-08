@@ -1,6 +1,0 @@
-MAS rescuer2 {
-
-    infrastructure: Centralised
-
-    agents: rescuer2 rescuer.asl agentArchClass jasonros.RosArch;
-}
