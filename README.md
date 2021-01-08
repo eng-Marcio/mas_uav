@@ -18,6 +18,7 @@ Then, download the necessary packages:
 ```
 $ cd ~/pi_ros_ws/src/
 $ git clone https://github.com/eng-Marcio/PI_VANT.git
+$ mv PI_VANT mas_uav
 ```
 
 Download deps and build the workspace:
